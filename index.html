@@ -13,7 +13,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS File -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #111827; /* Dark gray-blue background */
+            font-family: 'Inter', sans-serif;
+        }
+
+        .header-title {
+            text-shadow: 0 0 15px rgba(59, 130, 246, 0.5), 0 0 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        .card {
+            background-color: rgba(31, 41, 55, 0.7); /* Semi-transparent card background */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .ad-space {
+            background: linear-gradient(90deg, rgba(31, 41, 55, 0.7), rgba(59, 130, 246, 0.3));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #animation-container {
+            background: linear-gradient(-45deg, #0f172a, #1e3a8a, #3b82f6, #1d4ed8);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
 </head>
 <body class="text-gray-200">
 
@@ -42,37 +80,53 @@
         </div>
 
         <!-- Grid container for all categories -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
             <!-- Category: Movies -->
             <div class="card rounded-xl p-6">
                 <h2 class="text-2xl font-semibold mb-4 text-white flex items-center"><i class="fas fa-film mr-3 text-cyan-400"></i>Movie Links</h2>
                 <ul class="space-y-2 list-disc list-inside text-white/90">
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 1</a></li>
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 2</a></li>
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 3</a></li>
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 4</a></li>
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 5</a></li>
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 6</a></li>
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 7</a></li>
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 8</a></li>
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 9</a></li>
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 10</a></li>
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 11</a></li>
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 12</a></li>
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 13</a></li>
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 14</a></li>
-                    <li><a href="#" class="hover:text-cyan-400 hover:underline">Yahan Movie Link Daalen 15</a></li>
+                    <li><a href="https://filmycab.digital/" target="_blank" class="hover:text-cyan-400 hover:underline">FilmyCab</a></li>
+                    <li><a href="https://filmyfly.republican/" target="_blank" class="hover:text-cyan-400 hover:underline">FilmyFly</a></li>
+                    <li><a href="https://www.filmyzilla23.com/" target="_blank" class="hover:text-cyan-400 hover:underline">FilmyZilla</a></li>
+                    <li><a href="https://www.22filmywap.com/" target="_blank" class="hover:text-cyan-400 hover:underline">22FilmyWap</a></li>
+                    <li><a href="https://movies4u.ke/" target="_blank" class="hover:text-cyan-400 hover:underline">Movies4U</a></li>
+                    <li><a href="https://themoviesflix.dev/" target="_blank" class="hover:text-cyan-400 hover:underline">The MoviesFlix</a></li>
+                    <li><a href="https://hdmovieverse.com/" target="_blank" class="hover:text-cyan-400 hover:underline">HD MovieVerse</a></li>
+                    <li><a href="https://hdhub4u.cologne/?utm=mn&tx=2" target="_blank" class="hover:text-cyan-400 hover:underline">HDHub4u</a></li>
+                    <li><a href="https://hdmovies4u.in/" target="_blank" class="hover:text-cyan-400 hover:underline">HDMovies4u</a></li>
+                    <li><a href="https://dotmovies.faith/" target="_blank" class="hover:text-cyan-400 hover:underline">DotMovies</a></li>
+                    <li><a href="https://moviesnation.surf/" target="_blank" class="hover:text-cyan-400 hover:underline">MoviesNation</a></li>
+                    <li><a href="https://hindilinks4u.courses/" target="_blank" class="hover:text-cyan-400 hover:underline">HindiLinks4u</a></li>
+                    <li><a href="https://luxmovies.bike/" target="_blank" class="hover:text-cyan-400 hover:underline">LuxMovies</a></li>
+                    <li><a href="https://uhdmovies.rip/" target="_blank" class="hover:text-cyan-400 hover:underline">UHD Movies</a></li>
+                    <li><a href="https://moonflix.in/browse" target="_blank" class="hover:text-cyan-400 hover:underline">Moonflix</a></li>
+                    <li><a href="https://cinemalux.zip/" target="_blank" class="hover:text-cyan-400 hover:underline">CinemaLux</a></li>
+                    <li><a href="https://multimovies.co.in/" target="_blank" class="hover:text-cyan-400 hover:underline">MultiMovies</a></li>
+                    <li><a href="https://desiremovies.review/" target="_blank" class="hover:text-cyan-400 hover:underline">DesireMovies</a></li>
+                    <li><a href="https://fmovies-co.net/home" target="_blank" class="hover:text-cyan-400 hover:underline">Fmovies</a></li>
+                    <li><a href="https://www.justwatch.com/in/movies" target="_blank" class="hover:text-cyan-400 hover:underline">JustWatch</a></li>
                 </ul>
             </div>
 
             <!-- Category: Anime -->
             <div class="card rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4 text-white flex items-center"><i class="fas fa-dragon mr-3 text-rose-400"></i>Anime</h2>
+                <h2 class="text-2xl font-semibold mb-4 text-white flex items-center"><i class="fas fa-dragon mr-3 text-rose-400"></i>Anime & Cartoons</h2>
                 <ul class="space-y-2 list-disc list-inside text-white/90">
-                    <li><a href="#" class="hover:text-rose-400 hover:underline">Yahan Anime Link Daalen 1</a></li>
-                    <li><a href="#" class="hover:text-rose-400 hover:underline">Yahan Anime Link Daalen 2</a></li>
-                    <li><a href="#" class="hover:text-rose-400 hover:underline">Yahan Anime Link Daalen 3</a></li>
+                    <li><a href="https://zorotv.com.in/" target="_blank" class="hover:text-rose-400 hover:underline">ZoroTV</a></li>
+                    <li><a href="https://animesalt.cc/" target="_blank" class="hover:text-rose-400 hover:underline">AnimeSalt</a></li>
+                    <li><a href="https://toonstream.love/" target="_blank" class="hover:text-rose-400 hover:underline">ToonStream</a></li>
+                    <li><a href="https://animerulzx.net/" target="_blank" class="hover:text-rose-400 hover:underline">AnimeRulz</a></li>
+                    <li><a href="https://animedekho.co/" target="_blank" class="hover:text-rose-400 hover:underline">AnimeDekho</a></li>
+                    <li><a href="https://toonworld4all.me/category/anime/page/2/" target="_blank" class="hover:text-rose-400 hover:underline">ToonWorld4All</a></li>
+                    <li><a href="https://toonshub.xyz/" target="_blank" class="hover:text-rose-400 hover:underline">ToonsHub</a></li>
+                    <li><a href="https://ww1.animeflix.ltd/" target="_blank" class="hover:text-rose-400 hover:underline">AnimeFlix</a></li>
+                    <li><a href="https://gogoanimez.to/" target="_blank" class="hover:text-rose-400 hover:underline">GogoAnime</a></li>
+                    <li class="pt-2 font-semibold">Cartoons:</li>
+                    <li><a href="https://www.hotstar.com/in/kids-and-family" target="_blank" class="hover:text-rose-400 hover:underline">Disney+ Hotstar</a></li>
+                    <li><a href="https://www.vootkids.com/" target="_blank" class="hover:text-rose-400 hover:underline">Voot Kids</a></li>
+                    <li><a href="https://www.cartoonnetworkindia.com/" target="_blank" class="hover:text-rose-400 hover:underline">Cartoon Network</a></li>
+                    <li><a href="https://www.nickindia.com/" target="_blank" class="hover:text-rose-400 hover:underline">Nick India</a></li>
                 </ul>
             </div>
 
@@ -80,49 +134,32 @@
             <div class="card rounded-xl p-6">
                 <h2 class="text-2xl font-semibold mb-4 text-white flex items-center"><i class="fas fa-book-open mr-3 text-amber-400"></i>Books</h2>
                 <ul class="space-y-2 list-disc list-inside text-white/90">
-                    <li><a href="#" class="hover:text-amber-400 hover:underline">Yahan Book Link Daalen 1</a></li>
-                    <li><a href="#" class="hover:text-amber-400 hover:underline">Yahan Book Link Daalen 2</a></li>
-                    <li><a href="#" class="hover:text-amber-400 hover:underline">Yahan Book Link Daalen 3</a></li>
-                </ul>
-            </div>
-
-            <!-- Category: Government Apps & Websites -->
-            <div class="card rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4 text-white flex items-center"><i class="fas fa-landmark mr-3 text-emerald-400"></i>Govt. Websites</h2>
-                <ul class="space-y-2 list-disc list-inside text-white/90">
-                    <li><a href="#" class="hover:text-emerald-400 hover:underline">Yahan Govt Link Daalen 1</a></li>
-                    <li><a href="#" class="hover:text-emerald-400 hover:underline">Yahan Govt Link Daalen 2</a></li>
-                    <li><a href="#" class="hover:text-emerald-400 hover:underline">Yahan Govt Link Daalen 3</a></li>
+                    <li><a href="https://sobrief.com/" target="_blank" class="hover:text-amber-400 hover:underline">SoBrief</a></li>
+                    <li><a href="https://libgen.li/" target="_blank" class="hover:text-amber-400 hover:underline">LibGen</a></li>
+                    <li><a href="https://z-lib.id/" target="_blank" class="hover:text-amber-400 hover:underline">Z-Library</a></li>
+                    <li><a href="https://www.gutenberg.org/" target="_blank" class="hover:text-amber-400 hover:underline">Project Gutenberg</a></li>
+                    <li><a href="https://openstax.org/" target="_blank" class="hover:text-amber-400 hover:underline">OpenStax</a></li>
+                    <li><a href="https://books.google.co.in/" target="_blank" class="hover:text-amber-400 hover:underline">Google Books</a></li>
+                    <li><a href="https://www.scribd.com/" target="_blank" class="hover:text-amber-400 hover:underline">Scribd</a></li>
+                    <li><a href="https://archive.org/" target="_blank" class="hover:text-amber-400 hover:underline">Internet Archive</a></li>
+                    <li><a href="https://bookboon.com/" target="_blank" class="hover:text-amber-400 hover:underline">Bookboon</a></li>
+                    <li><a href="https://manybooks.net/" target="_blank" class="hover:text-amber-400 hover:underline">ManyBooks</a></li>
+                    <li><a href="https://www.ndl.iitkgp.ac.in/" target="_blank" class="hover:text-amber-400 hover:underline">NDL India</a></li>
                 </ul>
             </div>
             
-            <!-- Category: AI Tools -->
+            <!-- Category: Study Material / Free Courses -->
             <div class="card rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4 text-white flex items-center"><i class="fas fa-robot mr-3 text-sky-400"></i>AI Tools</h2>
+                <h2 class="text-2xl font-semibold mb-4 text-white flex items-center"><i class="fas fa-graduation-cap mr-3 text-violet-400"></i>Free All Cources</h2>
                 <ul class="space-y-2 list-disc list-inside text-white/90">
-                    <li><a href="#" class="hover:text-sky-400 hover:underline">Yahan AI Tool Link Daalen 1</a></li>
-                    <li><a href="#" class="hover:text-sky-400 hover:underline">Yahan AI Tool Link Daalen 2</a></li>
-                    <li><a href="#" class="hover:text-sky-400 hover:underline">Yahan AI Tool Link Daalen 3</a></li>
-                </ul>
-            </div>
-
-            <!-- Category: Useful Tools -->
-            <div class="card rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4 text-white flex items-center"><i class="fas fa-tools mr-3 text-slate-400"></i>Useful Tools</h2>
-                <ul class="space-y-2 list-disc list-inside text-white/90">
-                    <li><a href="#" class="hover:text-slate-400 hover:underline">Yahan Useful Link Daalen 1</a></li>
-                    <li><a href="#" class="hover:text-slate-400 hover:underline">Yahan Useful Link Daalen 2</a></li>
-                    <li><a href="#" class="hover:text-slate-400 hover:underline">Yahan Useful Link Daalen 3</a></li>
-                </ul>
-            </div>
-
-            <!-- Category: Study Material -->
-            <div class="card rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4 text-white flex items-center"><i class="fas fa-graduation-cap mr-3 text-violet-400"></i>Study Material</h2>
-                <ul class="space-y-2 list-disc list-inside text-white/90">
-                    <li><a href="#" class="hover:text-violet-400 hover:underline">Yahan Study Link Daalen 1</a></li>
-                    <li><a href="#" class="hover:text-violet-400 hover:underline">Yahan Study Link Daalen 2</a></li>
-                    <li><a href="#" class="hover:text-violet-400 hover:underline">Yahan Study Link Daalen 3</a></li>
+                    <li><a href="https://www.coursera.org/" target="_blank" class="hover:text-violet-400 hover:underline">Coursera</a></li>
+                    <li><a href="https://www.edx.org/" target="_blank" class="hover:text-violet-400 hover:underline">edX</a></li>
+                    <li><a href="https://www.khanacademy.org/" target="_blank" class="hover:text-violet-400 hover:underline">Khan Academy</a></li>
+                    <li><a href="https://swayam.gov.in/" target="_blank" class="hover:text-violet-400 hover:underline">SWAYAM</a></li>
+                    <li><a href="https://www.udemy.com/courses/free/" target="_blank" class="hover:text-violet-400 hover:underline">Udemy Free</a></li>
+                    <li><a href="https://nptel.ac.in/" target="_blank" class="hover:text-violet-400 hover:underline">NPTEL</a></li>
+                    <li><a href="https://alison.com/" target="_blank" class="hover:text-violet-400 hover:underline">Alison</a></li>
+                    <li><a href="https://www.classcentral.com/" target="_blank" class="hover:text-violet-400 hover:underline">Class Central</a></li>
                 </ul>
             </div>
 
@@ -138,9 +175,6 @@
             <p>&copy; 2024 Links Hub. All Rights Reserved.</p>
         </div>
     </footer>
-    
-    <!-- Custom JS File -->
-    <script src="script.js"></script>
 
 </body>
 </html>
