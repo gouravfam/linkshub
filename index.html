@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
- <meta name="google-site-verification" content="vgSqcmFy6Pidlm2w5MyC-QtKIe9SZNaf17ISzriEAY4" />
+    <meta name="google-site-verification" content="vgSqcmFy6Pidlm2w5MyC-QtKIe9SZNaf17ISzriEAY4" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Links Hub - Aapke Sabhi Links Ek Jagah</title>
@@ -52,6 +52,19 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+
+        /* Accessibility class to hide text from screen but not from screen readers */
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border-width: 0;
+        }
     </style>
 </head>
 <body class="text-gray-200">
@@ -80,87 +93,13 @@
             <span class="text-white/70 text-lg font-semibold">Advertisement Space</span>
         </div>
 
-        <!-- Grid container for all categories -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <!-- Category: Movies -->
-            <div class="card rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4 text-white flex items-center"><i class="fas fa-film mr-3 text-cyan-400"></i>Movie Links</h2>
-                <ul class="space-y-2 list-disc list-inside text-white/90">
-                    <li><a href="https://filmycab.digital/" target="_blank" class="hover:text-cyan-400 hover:underline">FilmyCab</a></li>
-                    <li><a href="https://filmyfly.republican/" target="_blank" class="hover:text-cyan-400 hover:underline">FilmyFly</a></li>
-                    <li><a href="https://www.filmyzilla23.com/" target="_blank" class="hover:text-cyan-400 hover:underline">FilmyZilla</a></li>
-                    <li><a href="https://www.22filmywap.com/" target="_blank" class="hover:text-cyan-400 hover:underline">22FilmyWap</a></li>
-                    <li><a href="https://movies4u.ke/" target="_blank" class="hover:text-cyan-400 hover:underline">Movies4U</a></li>
-                    <li><a href="https://themoviesflix.dev/" target="_blank" class="hover:text-cyan-400 hover:underline">The MoviesFlix</a></li>
-                    <li><a href="https://hdmovieverse.com/" target="_blank" class="hover:text-cyan-400 hover:underline">HD MovieVerse</a></li>
-                    <li><a href="https://hdhub4u.cologne/?utm=mn&tx=2" target="_blank" class="hover:text-cyan-400 hover:underline">HDHub4u</a></li>
-                    <li><a href="https://hdmovies4u.in/" target="_blank" class="hover:text-cyan-400 hover:underline">HDMovies4u</a></li>
-                    <li><a href="https://dotmovies.faith/" target="_blank" class="hover:text-cyan-400 hover:underline">DotMovies</a></li>
-                    <li><a href="https://moviesnation.surf/" target="_blank" class="hover:text-cyan-400 hover:underline">MoviesNation</a></li>
-                    <li><a href="https://hindilinks4u.courses/" target="_blank" class="hover:text-cyan-400 hover:underline">HindiLinks4u</a></li>
-                    <li><a href="https://luxmovies.bike/" target="_blank" class="hover:text-cyan-400 hover:underline">LuxMovies</a></li>
-                    <li><a href="https://uhdmovies.rip/" target="_blank" class="hover:text-cyan-400 hover:underline">UHD Movies</a></li>
-                    <li><a href="https://moonflix.in/browse" target="_blank" class="hover:text-cyan-400 hover:underline">Moonflix</a></li>
-                    <li><a href="https://cinemalux.zip/" target="_blank" class="hover:text-cyan-400 hover:underline">CinemaLux</a></li>
-                    <li><a href="https://multimovies.co.in/" target="_blank" class="hover:text-cyan-400 hover:underline">MultiMovies</a></li>
-                    <li><a href="https://desiremovies.review/" target="_blank" class="hover:text-cyan-400 hover:underline">DesireMovies</a></li>
-                    <li><a href="https://fmovies-co.net/home" target="_blank" class="hover:text-cyan-400 hover:underline">Fmovies</a></li>
-                    <li><a href="https://www.justwatch.com/in/movies" target="_blank" class="hover:text-cyan-400 hover:underline">JustWatch</a></li>
-                </ul>
-            </div>
-
-            <!-- Category: Anime -->
-            <div class="card rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4 text-white flex items-center"><i class="fas fa-dragon mr-3 text-rose-400"></i>Anime</h2>
-                <ul class="space-y-2 list-disc list-inside text-white/90">
-                    <li><a href="https://zorotv.com.in/" target="_blank" class="hover:text-rose-400 hover:underline">ZoroTV</a></li>
-                    <li><a href="https://animesalt.cc/" target="_blank" class="hover:text-rose-400 hover:underline">AnimeSalt</a></li>
-                    <li><a href="https://toonstream.love/" target="_blank" class="hover:text-rose-400 hover:underline">ToonStream</a></li>
-                    <li><a href="https://animerulzx.net/" target="_blank" class="hover:text-rose-400 hover:underline">AnimeRulz</a></li>
-                    <li><a href="https://animedekho.co/" target="_blank" class="hover:text-rose-400 hover:underline">AnimeDekho</a></li>
-                    <li><a href="https://toonworld4all.me/category/anime/page/2/" target="_blank" class="hover:text-rose-400 hover:underline">ToonWorld4All</a></li>
-                    <li><a href="https://toonshub.xyz/" target="_blank" class="hover:text-rose-400 hover:underline">ToonsHub</a></li>
-                    <li><a href="https://ww1.animeflix.ltd/" target="_blank" class="hover:text-rose-400 hover:underline">AnimeFlix</a></li>
-                    <li><a href="https://gogoanimez.to/" target="_blank" class="hover:text-rose-400 hover:underline">GogoAnime</a></li>
-                    <li><a href="https://aniwave.com.pl/" target="_blank" class="hover:text-rose-400 hover:underline">AniWave</a></li>
-                    <li><a href="https://watchanimeworld.in/" target="_blank" class="hover:text-rose-400 hover:underline">Watch Anime World</a></li>
-                </ul>
-            </div>
-
-            <!-- Category: Books -->
-            <div class="card rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4 text-white flex items-center"><i class="fas fa-book-open mr-3 text-amber-400"></i>Books</h2>
-                <ul class="space-y-2 list-disc list-inside text-white/90">
-                    <li><a href="https://sobrief.com/" target="_blank" class="hover:text-amber-400 hover:underline">SoBrief</a></li>
-                    <li><a href="https://libgen.li/" target="_blank" class="hover:text-amber-400 hover:underline">LibGen</a></li>
-                    <li><a href="https://z-lib.id/" target="_blank" class="hover:text-amber-400 hover:underline">Z-Library</a></li>
-                    <li><a href="https://www.gutenberg.org/" target="_blank" class="hover:text-amber-400 hover:underline">Project Gutenberg</a></li>
-                    <li><a href="https://openstax.org/" target="_blank" class="hover:text-amber-400 hover:underline">OpenStax</a></li>
-                    <li><a href="https://books.google.co.in/" target="_blank" class="hover:text-amber-400 hover:underline">Google Books</a></li>
-                    <li><a href="https://www.scribd.com/" target="_blank" class="hover:text-amber-400 hover:underline">Scribd</a></li>
-                    <li><a href="https://archive.org/" target="_blank" class="hover:text-amber-400 hover:underline">Internet Archive</a></li>
-                    <li><a href="https://bookboon.com/" target="_blank" class="hover:text-amber-400 hover:underline">Bookboon</a></li>
-                    <li><a href="https://manybooks.net/" target="_blank" class="hover:text-amber-400 hover:underline">ManyBooks</a></li>
-                    <li><a href="https://www.ndl.iitkgp.ac.in/" target="_blank" class="hover:text-amber-400 hover:underline">NDL India</a></li>
-                </ul>
-            </div>
-            
-            <!-- Category: Study Material / Free Courses -->
-            <div class="card rounded-xl p-6">
-                <h2 class="text-2xl font-semibold mb-4 text-white flex items-center"><i class="fas fa-graduation-cap mr-3 text-violet-400"></i>Free All Cources</h2>
-                <ul class="space-y-2 list-disc list-inside text-white/90">
-                    <li><a href="https://www.coursera.org/" target="_blank" class="hover:text-violet-400 hover:underline">Coursera</a></li>
-                    <li><a href="https://www.edx.org/" target="_blank" class="hover:text-violet-400 hover:underline">edX</a></li>
-                    <li><a href="https://www.khanacademy.org/" target="_blank" class="hover:text-violet-400 hover:underline">Khan Academy</a></li>
-                    <li><a href="https://swayam.gov.in/" target="_blank" class="hover:text-violet-400 hover:underline">SWAYAM</a></li>
-                    <li><a href="https://www.udemy.com/courses/free/" target="_blank" class="hover:text-violet-400 hover:underline">Udemy Free</a></li>
-                    <li><a href="https://nptel.ac.in/" target="_blank" class="hover:text-violet-400 hover:underline">NPTEL</a></li>
-                    <li><a href="https://alison.com/" target="_blank" class="hover:text-violet-400 hover:underline">Alison</a></li>
-                    <li><a href="https://www.classcentral.com/" target="_blank" class="hover:text-violet-400 hover:underline">Class Central</a></li>
-                </ul>
-            </div>
-
+        <!-- 
+          Grid container for all categories 
+          This is now empty. JavaScript will fill it.
+          NOTE: I added md:grid-cols-3 for better tablet support.
+        -->
+        <div id="links-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- JavaScript apne aap yahaan card banayega -->
         </div>
     </main>
 
@@ -174,6 +113,376 @@
         </div>
     </footer>
 
+    <!-- ====================================================== -->
+    <!-- JAVASCRIPT SECTION -->
+    <!-- ====================================================== -->
+    <script>
+        // --- 1. AAPKA SARA DATA ---
+        // Naya link add karne ke liye, bas is list mein ek nayi line add karein.
+        // Example: { name: "Google", url: "https://google.com" }
+        // 
+        // Har category ke 'links' array mein link add karein.
+        const linkData = [
+            {
+                title: "Movie Links",
+                icon: "fas fa-film",
+                iconColor: "text-cyan-400",
+                hoverColor: "hover:text-cyan-400",
+                links: [
+                    { name: "Hicine", url: "https://hicine.app/" },
+                    { name: "9kmovies", url: "https://9kmovies.agency/m/" },
+                    { name: "HD-Film", url: "https://hd-film.co/" },
+                    { name: "YoMovies", url: "https://yomovies.poker/" },
+                    { name: "HashHackers", url: "https://india.hashhackers.com/" },
+                    { name: "FilmyCab", url: "https://filmycab.digital/" },
+                    { name: "FilmyFly", url: "https://filmyfly.republican/" },
+                    { name: "FilmyZilla", url: "https://www.filmyzilla23.com/" },
+                    { name: "22FilmyWap", url: "https://www.22filmywap.com/" },
+                    { name: "Movies4U", url: "https://movies4u.ke/" },
+                    { name: "The MoviesFlix", url: "https://themoviesflix.dev/" },
+                    { name: "HD MovieVerse", url: "https://hdmovieverse.com/" },
+                    { name: "HDHub4u", url: "https://hdhub4u.cologne/?utm=mn&tx=2" },
+                    { name: "HDMovies4u", url: "https://hdmovies4u.in/" },
+                    { name: "DotMovies", url: "https://dotmovies.faith/" },
+                    { name: "MoviesNation", url: "https://moviesnation.surf/" },
+                    { name: "HindiLinks4u", url: "https://hindilinks4u.courses/" },
+                    { name: "LuxMovies", url: "https://luxmovies.bike/" },
+                    { name: "UHD Movies", url: "https://uhdmovies.rip/" },
+                    { name: "Moonflix", url: "https://moonflix.in/browse" },
+                    { name: "CinemaLux", url: "https://cinemalux.zip/" },
+                    { name: "MultiMovies", url: "https://multimovies.co.in/" },
+                    { name: "DesireMovies", url: "https://desiremovies.review/" },
+                    { name: "Fmovies", url: "https://fmovies-co.net/home" },
+                    { name: "JustWatch", url: "https://www.justwatch.com/in/movies" }
+                ]
+            },
+            {
+                title: "Anime",
+                icon: "fas fa-dragon",
+                iconColor: "text-rose-400",
+                hoverColor: "hover:text-rose-400",
+                links: [
+                    { name: "ZoroTV", url: "https://zorotv.com.in/" },
+                    { name: "AnimeSalt", url: "https://animesalt.cc/" },
+                    { name: "ToonStream", url: "https://toonstream.love/" },
+                    { name: "AnimeRulz", url: "https://animerulzx.net/" },
+                    { name: "AnimeDekho", url: "https://animedekho.co/" },
+                    { name: "ToonWorld4All", url: "httpsS://toonworld4all.me/category/anime/page/2/" },
+                    { name: "ToonsHub", url: "https://toonshub.xyz/" },
+                    { name: "AnimeFlix", url: "https://ww1.animeflix.ltd/" },
+                    { name: "GogoAnime", url: "https://gogoanimez.to/" },
+                    { name: "AniWave", url: "https://aniwave.com.pl/" },
+                    { name: "Watch Anime World", url: "https://watchanimeworld.in/" }
+                ]
+            },
+            {
+                title: "Books",
+                icon: "fas fa-book-open",
+                iconColor: "text-amber-400",
+                hoverColor: "hover:text-amber-400",
+                links: [
+                    { name: "SoBrief", url: "https://sobrief.com/" },
+                    { name: "LibGen", url: "https://libgen.li/" },
+                    { name: "Z-Library", url: "https://z-lib.id/" },
+                    { name: "Project Gutenberg", url: "https://www.gutenberg.org/" },
+                    { name: "OpenStax", url: "https://openstax.org/" },
+                    { name: "Google Books", url: "https://books.google.co.in/" },
+                    { name: "Scribd", url: "https://www.scribd.com/" },
+                    { name: "Internet Archive", url: "https://archive.org/" },
+                    { name: "Bookboon", url: "https://bookboon.com/" },
+                    { name: "ManyBooks", url: "https://manybooks.net/" },
+                    { name: "NDL India", url: "https://www.ndl.iitkgp.ac.in/" },
+                    { name: "Free-Ebooks.net", url: "https://www.free-ebooks.net/" },
+                    { name: "Planet eBook", url: "https://www.planetebook.com/" },
+                    { name: "LibriVox", url: "https://librivox.org/" },
+                    { name: "Smashwords", url: "https://www.smashwords.com/" },
+                    { name: "Feedbooks", url: "https://market.feedbooks.com/" },
+                    { name: "PDF Books World", url: "https://www.pdfbooksworld.com/" },
+                    { name: "FreeTechBooks", url: "https://www.freetechbooks.com/" },
+                    { name: "Pearltrees", url: "https://www.pearltrees.com/" },
+                    { name: "Free Computer Books", url: "https://freecomputerbooks.com/" },
+                    { name: "PDFRoom", url: "https://pdfroom.com/category/berserk" },
+                    { name: "PDFDrive", url: "https://pdfdrive.com.co/" },
+                    { name: "PDFCoffee", url: "https://pdfcoffee.com/" }
+                ]
+            },
+            {
+                title: "Free All Cources",
+                icon: "fas fa-graduation-cap",
+                iconColor: "text-violet-400",
+                hoverColor: "hover:text-violet-400",
+                links: [
+                    { name: "Coursera", url: "https://www.coursera.org/" },
+                    { name: "edX", url: "https://www.edx.org/" },
+                    { name: "Khan Academy", url: "https://www.khanacademy.org/" },
+                    { name: "SWAYAM", url: "https://swayam.gov.in/" },
+                    { name: "Udemy Free", url: "https://www.udemy.com/courses/free/" },
+                    { name: "NPTEL", url: "https://nptel.ac.in/" },
+                    { name: "Alison", url: "https://alison.com/" },
+                    { name: "Class Central", url: "https://www.classcentral.com/" },
+                    { name: "LearnVern", url: "https://www.learnvern.com/" },
+                    { name: "ePathshala", url: "https://epathshala.nic.in/" },
+                    { name: "Skill India Digital", url: "https://www.skillindiadigital.gov.in/home" },
+                    { name: "Mind Luster", url: "https://www.mindluster.com/" },
+                    { name: "Learn Anything", url: "https://learn-anything.xyz/" },
+                    { name: "Digital Defynd", url: "https://digitaldefynd.com/" }
+                ],
+                // YEH 8 CATEGORY AB ISKE ANDAR HAIN
+                subcategories: [
+                    {
+                        title: "Vigyan Shikshak (Science)",
+                        icon: "fas fa-flask",
+                        iconColor: "text-green-400",
+                        hoverColor: "hover:text-green-400",
+                        links: [
+                            { name: "Mosa Mack", url: "https://mosamack.com" },
+                            { name: "The Lawrence Hall of Science", url: "https://lawrencehallofscience.org" },
+                            { name: "Science Buddies", url: "https://sciencebuddies.org" },
+                            { name: "Mystery Science", url: "https://mysteryscience.com" }
+                        ]
+                    },
+                    {
+                        title: "Ganit Shikshak (Math)",
+                        icon: "fas fa-calculator",
+                        iconColor: "text-orange-400",
+                        hoverColor: "hover:text-orange-400",
+                        links: [
+                            { name: "Math Central", url: "https://mathcentral.uregina.ca" },
+                            { name: "Get the Math", url: "https://www.thirteen.org/get-the-math" },
+                            { name: "Khan Academy", url: "https://khanacademy.org" },
+                            { name: "Math Planet", url: "https://www.mathplanet.com" }
+                        ]
+                    },
+                    {
+                        title: "Bhasha Shikshak (Language)",
+                        icon: "fas fa-language",
+                        iconColor: "text-red-400",
+                        hoverColor: "hover:text-red-400",
+                        links: [
+                            { name: "Reading Rockets", url: "https://readingrockets.org" },
+                            { name: "Brain Pop", url: "https://brainpop.com" },
+                            { name: "Duolingo", url: "https://duolingo.com" },
+                            { name: "ReadWriteThink", url: "https://readwritethink.org" }
+                        ]
+                    },
+                    {
+                        title: "Itihaas Shikshak (History)",
+                        icon: "fas fa-landmark",
+                        iconColor: "text-yellow-600",
+                        hoverColor: "hover:text-yellow-600",
+                        links: [
+                            { name: "Teaching History", url: "https://teachinghistory.org" },
+                            { name: "Historic Newspapers", url: "https://chroniclingamerica.loc.gov" },
+                            { name: "History Engine", url: "https://historyengine.richmond.edu" },
+                            { name: "Histography", url: "https://histography.io" }
+                        ]
+                    },
+                    {
+                        title: "Kala Shikshak (Arts)",
+                        icon: "fas fa-palette",
+                        iconColor: "text-purple-400",
+                        hoverColor: "hover:text-purple-400",
+                        links: [
+                            { name: "Kinder Art", url: "https://kinderart.com" },
+                            { name: "Arts Edge", url: "https://artsedge.kennedy-center.org" },
+                            { name: "National Gallery of Art", url: "https://www.nga.gov" },
+                            { name: "Google Arts & Culture", url: "https://artsandculture.google.com" }
+                        ]
+                    },
+                    {
+                        title: "Bhautiki Shikshak (Physics)",
+                        icon: "fas fa-atom",
+                        iconColor: "text-blue-400",
+                        hoverColor: "hover:text-blue-400",
+                        links: [
+                            { name: "Physics Central", url: "https://www.aps.org/physicscentral/" },
+                            { name: "PhET Simulations", url: "https://phet.colorado.edu" },
+                            { name: "Physics.org", url: "https://physics.org" },
+                            { name: "CK-12", url: "https://ck12.org" }
+                        ]
+                    },
+                    {
+                        title: "Sangeet Shikshak (Music)",
+                        icon: "fas fa-music",
+                        iconColor: "text-pink-400",
+                        hoverColor: "hover:text-pink-400",
+                        links: [
+                            { name: "Chromatone", url: "httpss://chromatone.center" },
+                            { name: "Smart Music", url: "https://smartmusic.com" },
+                            { name: "Whack-A-Note", url: "https://www.kennedy-center.org/education/resources-for-educators/classroom-resources/media-and-interactives/interactives/music/whack-a-note/" },
+                            { name: "Music Theory", url: "https://musictory.net" } // Typo fix: musictheory.net
+                        ]
+                    },
+                    {
+                        title: "Samajik Adhyayan (Social Studies)",
+                        icon: "fas fa-globe-americas",
+                        iconColor: "text-teal-400",
+                        hoverColor: "hover:text-teal-400",
+                        links: [
+                            { name: "Smithsonian Education", url: "https://smithsonianeducation.org" },
+                            { name: "Library of Congress (Teachers)", url: "https://loc.gov/education" },
+                            { name: "Discovery Education", url: "https://discoveryeducation.com" },
+                            { name: "PBS LearningMedia", url: "https://pbslearningmedia.org" }
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Free Typing Learn",
+                icon: "fas fa-keyboard",
+                iconColor: "text-green-400",
+                hoverColor: "hover:text-green-400",
+                links: [
+                    { name: "Typing Jungle (Edclub)", url: "https" },
+                    { name: "Monkeytype", url: "https://monkeytype.com/" },
+                    { name: "Typing.com Tests", url: "https://www.typing.com/student/tests" },
+                    { name: "TypingClub", url: "https://www.typingclub.com/" },
+                    { name: "Typing.com", url: "https://www.typing.com/" },
+                    { name: "Ratatype", url: "https://www.ratatype.com/" },
+                    { name: "TypingTest.com", url: "https://www.typingtest.com/" },
+                    { name: "TypingTest Trainer", url: "https://www.typingtest.com/trainer/" },
+                    { name: "Keybr", url: "https://www.keybr.com/" },
+                    { name: "10 Fast Fingers", url: "https://10fastfingers.com/" },
+                    { name: "The Typing Cat", url: "https://thetypingcat.com/" },
+                    { name: "Typeracer", url: "https://typeracer.com/" },
+                    { name: "SpeedTypingOnline", url: "https://www.speedtypingonline.com/" },
+                    { name:Array(15).join(" ") + "KeyShar", url: "https://keyshar.com/" }
+                ]
+            }
+        ];
+
+        // --- 2. CARD BANANE KA LOGIC (LOOP) ---
+
+        // HTML mein se main grid container ko chunein
+        const gridContainer = document.getElementById('links-grid');
+
+        // 'linkData' list ke har item ke liye yeh loop chalayega
+        linkData.forEach(category => {
+            
+            // 1. Naya card div banayein
+            const card = document.createElement('div');
+            card.className = 'card rounded-xl p-6';
+
+            // --- YAHAN BADLAV KIYA GAYA HAI ---
+            // Agar category "Free All Cources" YA "Free Typing Learn" hai, toh use full-width banayein
+            if (category.title === "Free All Cources" || category.title === "Free Typing Learn") {
+                card.className += ' sm:col-span-2 md:col-span-3 lg:col-span-4';
+            }
+            // --- BADLAV KHATM ---
+
+            // 2. Category title (h2) banayein
+            const title = document.createElement('h2');
+            title.className = 'text-2xl font-semibold mb-4 text-white flex items-center';
+            // Icon aur Title text add karein
+            title.innerHTML = `
+                <i class="${category.icon} mr-3 ${category.iconColor}" aria-hidden="true"></i>
+                ${category.title}
+            `;
+
+            // 3. Links ke liye <ul> list banayein
+            const ul = document.createElement('ul');
+            ul.className = 'space-y-2 text-white/90'; // Purane bullet points hata diye
+
+            // --- Inner Loop ---
+            // Ab har category ke 'links' array ke liye loop chalayega
+            category.links.forEach(link => {
+                // Har link ke liye <li> aur <a> tag banayein
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                
+                a.href = link.url;
+                a.target = '_blank'; // Naye tab mein kholne ke liye
+                // Icon ko align karne ke liye flex add kiya
+                a.className = `${category.hoverColor} hover:underline flex items-center`; 
+                
+                // Google Favicon service se icon URL banaya
+                const faviconUrl = `https://www.google.com/s2/favicons?domain=${link.url}`;
+
+                // Link text, icon, aur accessibility text add karein
+                a.innerHTML = `
+                    <img src="${faviconUrl}" class="w-4 h-4 mr-2 flex-shrink-0" alt="" loading="lazy" onerror="this.style.display='none'">
+                    <span>${link.name}</span>
+                    <span class="sr-only">(opens in new tab)</span> 
+                `;
+
+                // <a> ko <li> ke andar daalein
+                li.appendChild(a);
+                // <li> ko <ul> ke andar daalein
+                ul.appendChild(li);
+            });
+            // --- Inner Loop End ---
+
+            // --- NEW: Subcategory Loop (YEH NAYA ADD KIYA HAI) ---
+            if (category.subcategories && category.subcategories.length > 0) {
+                // Naya rectangle/container banayein
+                const subcatContainer = document.createElement('div');
+                
+                // --- YAHAN BADLAV KIYA GAYA HAI ---
+                // Subcategories ko grid mein dikhane ke liye classes add ki (isse length kam ho jayegi)
+                subcatContainer.className = 'mt-6 pt-4 border-t border-white/20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4'; // "rectangle"
+                // --- BADLAV KHATM ---
+
+
+                category.subcategories.forEach(subcat => {
+
+                    // --- YAHAN BADLAV KIYA GAYA HAI ---
+                    // Har subcategory ke liye ek alag wrapper div banaya gaya hai
+                    // Taki grid layout sahi se kaam kare
+                    const subcatWrapper = document.createElement('div');
+                    // --- BADLAV KHATM ---
+
+                    // Subcategory title (h3)
+                    const subTitle = document.createElement('h3');
+                    subTitle.className = 'text-xl font-semibold mb-3 text-white flex items-center';
+                    subTitle.innerHTML = `
+                        <i class="${subcat.icon} mr-3 ${subcat.iconColor}" aria-hidden="true"></i>
+                        ${subcat.title}
+                    `;
+                    subcatWrapper.appendChild(subTitle); // Title ko wrapper mein daala
+
+                    // Subcategory list (ul)
+                    const subUl = document.createElement('ul');
+                    subUl.className = 'space-y-2 text-white/90 mb-4'; // Har list ke baad thoda gap
+
+                    // Subcategory links loop
+                    subcat.links.forEach(link => {
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        
+                        a.href = link.url;
+                        a.target = '_blank';
+                        // Har subcategory ka apna hover color hoga
+                        a.className = `${subcat.hoverColor} hover:underline flex items-center`; 
+                        
+                        const faviconUrl = `https://www.google.com/s2/favicons?domain=${link.url}`;
+
+                        a.innerHTML = `
+                            <img src="${faviconUrl}" class="w-4 h-4 mr-2 flex-shrink-0" alt="" loading="lazy" onerror="this.style.display='none'">
+                            <span>${link.name}</span>
+                            <span class="sr-only">(opens in new tab)</span> 
+                        `;
+
+                        li.appendChild(a);
+                        subUl.appendChild(li);
+                    });
+
+                    subcatWrapper.appendChild(subUl); // List ko wrapper mein daala
+                    subcatContainer.appendChild(subcatWrapper); // Wrapper ko main subcategory container mein daala
+                });
+
+                card.appendChild(subcatContainer);
+            }
+            // --- Subcategory Loop End ---
+
+            // 4. Title (h2) aur List (ul) ko card mein jodein
+            card.appendChild(title);
+            card.appendChild(ul);
+
+            // 5. Poore bane hue card ko main grid container mein jodein
+            gridContainer.appendChild(card);
+        });
+
+    </script>
+
 </body>
 </html>
-
