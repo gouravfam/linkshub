@@ -95,8 +95,6 @@
 
         <!-- 
           Grid container for all categories 
-          This is now empty. JavaScript will fill it.
-          NOTE: I added md:grid-cols-3 for better tablet support.
         -->
         <div id="links-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             <!-- JavaScript apne aap yahaan card banayega -->
@@ -117,12 +115,51 @@
     <!-- JAVASCRIPT SECTION -->
     <!-- ====================================================== -->
     <script>
-        // --- 1. AAPKA SARA DATA ---
-        // Naya link add karne ke liye, bas is list mein ek nayi line add karein.
-        // Example: { name: "Google", url: "https://google.com" }
-        // 
-        // Har category ke 'links' array mein link add karein.
+        // --- 1. SMART ICON GENERATOR ---
+        function getSmartIcon(name) {
+            const n = name.toLowerCase();
+
+            // --- Video, Music & Audio ---
+            if (n.includes('video') || n.includes('clip') || n.includes('film') || n.includes('movie') || n.includes('screen') || n.includes('runway') || n.includes('sora') || n.includes('pika') || n.includes('invideo') || n.includes('veed') || n.includes('cut') || n.includes('capt')) return 'fas fa-video text-red-500';
+            if (n.includes('audio') || n.includes('music') || n.includes('sound') || n.includes('song') || n.includes('voice') || n.includes('speech') || n.includes('tts') || n.includes('dub') || n.includes('podcast') || n.includes('spotify') || n.includes('vocal') || n.includes('beat') || n.includes('mix')) return 'fas fa-music text-pink-400';
+            if (n.includes('microphone') || n.includes('record') || n.includes('transcri')) return 'fas fa-microphone-alt text-yellow-400';
+            if (n.includes('animat') || n.includes('motion')) return 'fas fa-film text-purple-400';
+
+            // --- Coding & Dev ---
+            if (n.includes('github') || n.includes('copilot') || n.includes('git')) return 'fab fa-github text-gray-100';
+            if (n.includes('code') || n.includes('script') || n.includes('dev') || n.includes('stack') || n.includes('replit') || n.includes('tabnine') || n.includes('cursor')) return 'fas fa-code text-green-400';
+            if (n.includes('python') || n.includes('pandas') || n.includes('numpy') || n.includes('learn') || n.includes('torch')) return 'fab fa-python text-blue-400';
+            if (n.includes('java') || n.includes('kotlin')) return 'fab fa-java text-red-400';
+            if (n.includes('data') || n.includes('sql') || n.includes('query') || n.includes('excel') || n.includes('sheet')) return 'fas fa-database text-yellow-500';
+            if (n.includes('gpt') || n.includes('llm') || n.includes('ai') || n.includes('model') || n.includes('chat') || n.includes('bot') || n.includes('robot')) return 'fas fa-robot text-indigo-400';
+            if (n.includes('face') || n.includes('detect') || n.includes('recog')) return 'fas fa-user-circle text-orange-300';
+            if (n.includes('hugging')) return 'fas fa-smile text-yellow-300';
+
+            // --- Image & Design ---
+            if (n.includes('art') || n.includes('draw') || n.includes('paint') || n.includes('sketch') || n.includes('design') || n.includes('canvas') || n.includes('creat') || n.includes('midjourney') || n.includes('dall') || n.includes('stable')) return 'fas fa-palette text-pink-500';
+            if (n.includes('image') || n.includes('photo') || n.includes('picture') || n.includes('pic') || n.includes('upscal') || n.includes('remov') || n.includes('edit') || n.includes('blur') || n.includes('restor')) return 'fas fa-image text-purple-400';
+            if (n.includes('logo') || n.includes('brand') || n.includes('icon')) return 'fas fa-shapes text-orange-500';
+            if (n.includes('color')) return 'fas fa-eye-dropper text-teal-400';
+            if (n.includes('ui') || n.includes('ux') || n.includes('inter')) return 'fas fa-layer-group text-blue-300';
+
+            // --- Content & Text ---
+            if (n.includes('writer') || n.includes('write') || n.includes('copy') || n.includes('text') || n.includes('blog') || n.includes('post') || n.includes('essay')) return 'fas fa-pen-nib text-emerald-500';
+            if (n.includes('counter')) return 'fas fa-sort-numeric-down text-blue-500';
+            if (n.includes('pdf')) return 'fas fa-file-pdf text-red-500';
+            if (n.includes('calculator')) return 'fas fa-calculator text-orange-400';
+            if (n.includes('converter')) return 'fas fa-exchange-alt text-green-400';
+            if (n.includes('seo') || n.includes('rank') || n.includes('analy')) return 'fas fa-chart-line text-blue-400';
+            if (n.includes('youtube')) return 'fab fa-youtube text-red-500';
+            if (n.includes('social') || n.includes('media') || n.includes('twitter') || n.includes('linkedin')) return 'fas fa-share-alt text-pink-400';
+            if (n.includes('business') || n.includes('agent') || n.includes('task') || n.includes('project') || n.includes('manage')) return 'fas fa-briefcase text-gray-300';
+            if (n.includes('translate') || n.includes('lang')) return 'fas fa-language text-blue-300';
+
+            return 'fas fa-bolt text-yellow-300'; // Default smart icon
+        }
+
+        // --- 2. DATA ---
         const linkData = [
+            // --- OLD CATEGORIES ---
             {
                 title: "Movie Links",
                 icon: "fas fa-film",
@@ -167,7 +204,7 @@
                     { name: "ToonStream", url: "https://toonstream.love/" },
                     { name: "AnimeRulz", url: "https://animerulzx.net/" },
                     { name: "AnimeDekho", url: "https://animedekho.co/" },
-                    { name: "ToonWorld4All", url: "httpsS://toonworld4all.me/category/anime/page/2/" },
+                    { name: "ToonWorld4All", url: "https://toonworld4all.me/category/anime/page/2/" },
                     { name: "ToonsHub", url: "https://toonshub.xyz/" },
                     { name: "AnimeFlix", url: "https://ww1.animeflix.ltd/" },
                     { name: "GogoAnime", url: "https://gogoanimez.to/" },
@@ -227,7 +264,6 @@
                     { name: "Learn Anything", url: "https://learn-anything.xyz/" },
                     { name: "Digital Defynd", url: "https://digitaldefynd.com/" }
                 ],
-                // YEH 8 CATEGORY AB ISKE ANDAR HAIN
                 subcategories: [
                     {
                         title: "Vigyan Shikshak (Science)",
@@ -307,10 +343,10 @@
                         iconColor: "text-pink-400",
                         hoverColor: "hover:text-pink-400",
                         links: [
-                            { name: "Chromatone", url: "httpss://chromatone.center" },
+                            { name: "Chromatone", url: "https://chromatone.center" },
                             { name: "Smart Music", url: "https://smartmusic.com" },
                             { name: "Whack-A-Note", url: "https://www.kennedy-center.org/education/resources-for-educators/classroom-resources/media-and-interactives/interactives/music/whack-a-note/" },
-                            { name: "Music Theory", url: "https://musictory.net" } // Typo fix: musictheory.net
+                            { name: "Music Theory", url: "https://musictory.net" }
                         ]
                     },
                     {
@@ -333,7 +369,7 @@
                 iconColor: "text-green-400",
                 hoverColor: "hover:text-green-400",
                 links: [
-                    { name: "Typing Jungle (Edclub)", url: "https" },
+                    { name: "Typing Jungle (Edclub)", url: "https://www.edclub.com/" },
                     { name: "Monkeytype", url: "https://monkeytype.com/" },
                     { name: "Typing.com Tests", url: "https://www.typing.com/student/tests" },
                     { name: "TypingClub", url: "https://www.typingclub.com/" },
@@ -348,141 +384,854 @@
                     { name: "SpeedTypingOnline", url: "https://www.speedtypingonline.com/" },
                     { name:Array(15).join(" ") + "KeyShar", url: "https://keyshar.com/" }
                 ]
+            },
+            
+            // --- NEW AI CATEGORIES ---
+            {
+                title: "AI Chatbots & Writing",
+                icon: "fas fa-robot",
+                iconColor: "text-indigo-500",
+                hoverColor: "hover:text-indigo-500",
+                links: [
+                    {name: "ChatGPT", url: "https://www.aixploria.com/en/tool/chatgpt/"},
+                    {name: "Claude", url: "https://www.aixploria.com/en/tool/claude/"},
+                    {name: "Google Gemini", url: "https://www.aixploria.com/en/tool/google-gemini/"},
+                    {name: "Microsoft Copilot", url: "https://www.aixploria.com/en/tool/microsoft-copilot/"},
+                    {name: "Jasper", url: "https://www.aixploria.com/en/tool/jasper/"},
+                    {name: "Copy AI", url: "https://www.aixploria.com/en/tool/copy-ai/"},
+                    {name: "Writesonic", url: "https://www.aixploria.com/en/tool/writesonic/"},
+                    {name: "Rytr", url: "https://www.aixploria.com/en/tool/rytr/"},
+                    {name: "Quillbot", url: "https://www.aixploria.com/en/tool/quillbot/"},
+                    {name: "Wordtune", url: "https://www.aixploria.com/en/tool/wordtune/"},
+                    {name: "Sudowrite", url: "https://www.aixploria.com/en/tool/sudowrite/"},
+                    {name: "Jenni AI", url: "https://www.aixploria.com/en/tool/jenni-ai/"},
+                    {name: "Frase", url: "https://www.aixploria.com/en/tool/frase/"},
+                    {name: "Surfer SEO", url: "https://www.aixploria.com/en/tool/surfer-seo/"},
+                    {name: "Semrush One", url: "https://www.aixploria.com/en/tool/semrush-one/"},
+                    {name: "Anyword", url: "https://www.aixploria.com/en/tool/anyword/"},
+                    {name: "TextCortex", url: "https://www.aixploria.com/en/tool/textcortex/"},
+                    {name: "Hypewrite", url: "https://www.aixploria.com/en/tool/hypewrite/"},
+                    {name: "Moonbeam", url: "https://www.aixploria.com/en/tool/moonbeam/"},
+                    {name: "NovelAI", url: "https://www.aixploria.com/en/tool/novelai/"},
+                    {name: "AI Dungeon", url: "https://www.aixploria.com/en/tool/ai-dungeon/"},
+                    {name: "Character AI", url: "https://www.aixploria.com/en/tool/character-ai/"},
+                    {name: "Chai", url: "https://www.aixploria.com/en/tool/chai/"},
+                    {name: "Replika", url: "https://www.aixploria.com/en/tool/replika/"},
+                    {name: "Poe", url: "https://www.aixploria.com/en/tool/poe/"},
+                    {name: "Perplexity AI", url: "https://www.aixploria.com/en/tool/perplexity-ai/"},
+                    {name: "You.com", url: "https://www.aixploria.com/en/tool/you-com/"},
+                    {name: "Komo", url: "https://www.aixploria.com/en/tool/komo/"},
+                    {name: "Phind", url: "https://www.aixploria.com/en/tool/phind/"},
+                    {name: "Andi", url: "https://www.aixploria.com/en/tool/andi/"},
+                    {name: "HuggingChat", url: "https://www.aixploria.com/en/tool/huggingchat/"},
+                    {name: "Koala", url: "https://www.aixploria.com/en/tool/koala/"},
+                    {name: "Agility Writer", url: "https://www.aixploria.com/en/tool/agility-writer/"},
+                    {name: "Article Forge", url: "https://www.aixploria.com/en/tool/article-forge/"},
+                    {name: "WordHero", url: "https://www.aixploria.com/en/tool/wordhero/"},
+                    {name: "ClosersCopy", url: "https://www.aixploria.com/en/tool/closerscopy/"},
+                    {name: "LongShot", url: "https://www.aixploria.com/en/tool/longshot/"},
+                    {name: "Scalenut", url: "https://www.aixploria.com/en/tool/scalenut/"},
+                    {name: "Outranking", url: "https://www.aixploria.com/en/tool/outranking/"},
+                    {name: "Neuraltext", url: "https://www.aixploria.com/en/tool/neuraltext/"},
+                    {name: "Content at Scale", url: "https://www.aixploria.com/en/tool/content-at-scale/"},
+                    {name: "Writer", url: "https://www.aixploria.com/en/tool/writer/"},
+                    {name: "Hyperwrite", url: "https://www.aixploria.com/en/tool/hyperwrite/"},
+                    {name: "Sincode", url: "https://www.aixploria.com/en/tool/sincode/"},
+                    {name: "Nichesss", url: "https://www.aixploria.com/en/tool/nichesss/"},
+                    {name: "Peppertype", url: "https://www.aixploria.com/en/tool/peppertype/"},
+                    {name: "Simplified", url: "https://www.aixploria.com/en/tool/simplified/"},
+                    {name: "Smart Copy", url: "https://www.aixploria.com/en/tool/smart-copy/"},
+                    {name: "Unbounce", url: "https://www.aixploria.com/en/tool/unbounce/"},
+                    {name: "Regie", url: "https://www.aixploria.com/en/tool/regie/"},
+                    {name: "Lavender", url: "https://www.aixploria.com/en/tool/lavender/"},
+                    {name: "Warmer", url: "https://www.aixploria.com/en/tool/warmer/"},
+                    {name: "Octane AI", url: "https://www.aixploria.com/en/tool/octane-ai/"},
+                    {name: "Twain", url: "https://www.aixploria.com/en/tool/twain/"},
+                    {name: "Hoppy Copy", url: "https://www.aixploria.com/en/tool/hoppy-copy/"},
+                    {name: "Adzis", url: "https://www.aixploria.com/en/tool/adzis/"},
+                    {name: "Cowriter", url: "https://www.aixploria.com/en/tool/cowriter/"},
+                    {name: "Type AI", url: "https://www.aixploria.com/en/tool/type-ai/"},
+                    {name: "Lex", url: "https://www.aixploria.com/en/tool/lex/"},
+                    {name: "Craft", url: "https://www.aixploria.com/en/tool/craft/"},
+                    {name: "Mem", url: "https://www.aixploria.com/en/tool/mem/"},
+                    {name: "Notion AI", url: "https://www.aixploria.com/en/tool/notion-ai/"},
+                    {name: "Coda AI", url: "https://www.aixploria.com/en/tool/coda-ai/"},
+                    {name: "Taskade", url: "https://www.aixploria.com/en/tool/taskade/"},
+                    {name: "Monday.com", url: "https://www.aixploria.com/en/tool/monday-com/"},
+                    {name: "ClickUp", url: "https://www.aixploria.com/en/tool/clickup/"},
+                    {name: "Asana", url: "https://www.aixploria.com/en/tool/asana/"},
+                    {name: "Trello", url: "https://www.aixploria.com/en/tool/trello/"},
+                    {name: "Slack AI", url: "https://www.aixploria.com/en/tool/slack-ai/"},
+                    {name: "Discord AI", url: "https://www.aixploria.com/en/tool/discord-ai/"},
+                    {name: "Zoom AI", url: "https://www.aixploria.com/en/tool/zoom-ai/"},
+                    {name: "Otter AI", url: "https://www.aixploria.com/en/tool/otter-ai/"},
+                    {name: "Fireflies AI", url: "https://www.aixploria.com/en/tool/fireflies-ai/"},
+                    {name: "TLDV", url: "https://www.aixploria.com/en/tool/tldv/"},
+                    {name: "Fathom", url: "https://www.aixploria.com/en/tool/fathom/"},
+                    {name: "Airgram", url: "https://www.aixploria.com/en/tool/airgram/"},
+                    {name: "Supernormal", url: "https://www.aixploria.com/en/tool/supernormal/"},
+                    {name: "Krisp", url: "https://www.aixploria.com/en/tool/krisp/"},
+                    {name: "Poised", url: "https://www.aixploria.com/en/tool/poised/"},
+                    {name: "Yoodli", url: "https://www.aixploria.com/en/tool/yoodli/"},
+                    {name: "Grammarly", url: "https://www.aixploria.com/en/tool/grammarly/"},
+                    {name: "ProWritingAid", url: "https://www.aixploria.com/en/tool/prowritingaid/"},
+                    {name: "Linguix", url: "https://www.aixploria.com/en/tool/linguix/"},
+                    {name: "LanguageTool", url: "https://www.aixploria.com/en/tool/languagetool/"},
+                    {name: "DeepL", url: "https://www.aixploria.com/en/tool/deepl/"},
+                    {name: "Google Translate", url: "https://www.aixploria.com/en/tool/google-translate/"},
+                    {name: "Bing Translate", url: "https://www.aixploria.com/en/tool/bing-translate/"},
+                    {name: "ChatPDF", url: "https://www.aixploria.com/en/tool/chatpdf/"},
+                    {name: "Humata", url: "https://www.aixploria.com/en/tool/humata/"},
+                    {name: "AskYourPDF", url: "https://www.aixploria.com/en/tool/askyourpdf/"},
+                    {name: "ChatDOC", url: "https://www.aixploria.com/en/tool/chatdoc/"},
+                    {name: "PDF AI", url: "https://www.aixploria.com/en/tool/pdf-ai/"},
+                    {name: "Scholarcy", url: "https://www.aixploria.com/en/tool/scholarcy/"},
+                    {name: "Genei", url: "https://www.aixploria.com/en/tool/genei/"},
+                    {name: "Elicit", url: "https://www.aixploria.com/en/tool/elicit/"},
+                    {name: "Consensus", url: "https://www.aixploria.com/en/tool/consensus/"},
+                    {name: "SciSpace", url: "https://www.aixploria.com/en/tool/scispace/"},
+                    {name: "ResearchRabbit", url: "https://www.aixploria.com/en/tool/researchrabbit/"},
+                    {name: "Connected Papers", url: "https://www.aixploria.com/en/tool/connected-papers/"},
+                    {name: "Semantic Scholar", url: "https://www.aixploria.com/en/tool/semantic-scholar/"},
+                    {name: "Originality AI", url: "https://www.aixploria.com/en/tool/originality-ai/"},
+                    {name: "Winston AI", url: "https://www.aixploria.com/en/tool/winston-ai/"},
+                    {name: "GPTZero", url: "https://www.aixploria.com/en/tool/gptzero/"},
+                    {name: "Copyleaks", url: "https://www.aixploria.com/en/tool/copyleaks/"},
+                    {name: "Turnitin", url: "https://www.aixploria.com/en/tool/turnitin/"},
+                    {name: "Undetectable AI", url: "https://www.aixploria.com/en/tool/undetectable-ai/"},
+                    {name: "Stealth Writer", url: "https://www.aixploria.com/en/tool/stealth-writer/"},
+                    {name: "Conch AI", url: "https://www.aixploria.com/en/tool/conch-ai/"},
+                    {name: "Quillbot Detector", url: "https://www.aixploria.com/en/tool/quillbot-detector/"},
+                    {name: "Sapling", url: "https://www.aixploria.com/en/tool/sapling/"},
+                    {name: "Writer Detector", url: "https://www.aixploria.com/en/tool/writer-detector/"},
+                    {name: "Crossplag", url: "https://www.aixploria.com/en/tool/crossplag/"},
+                    {name: "ZeroGPT", url: "https://www.aixploria.com/en/tool/zerogpt/"},
+                    {name: "Corrector App", url: "https://www.aixploria.com/en/tool/corrector-app/"},
+                    {name: "Scribbr", url: "https://www.aixploria.com/en/tool/scribbr/"}
+                ]
+            },
+            {
+                title: "AI Image & Design Tools",
+                icon: "fas fa-palette",
+                iconColor: "text-pink-500",
+                hoverColor: "hover:text-pink-500",
+                links: [
+                    {name: "Midjourney", url: "https://www.aixploria.com/en/tool/midjourney/"},
+                    {name: "DALL-E 3", url: "https://www.aixploria.com/en/tool/dall-e-3/"},
+                    {name: "Stable Diffusion", url: "https://www.aixploria.com/en/tool/stable-diffusion/"},
+                    {name: "Leonardo AI", url: "https://www.aixploria.com/en/tool/leonardo-ai/"},
+                    {name: "Blue Willow", url: "https://www.aixploria.com/en/tool/blue-willow/"},
+                    {name: "Playground AI", url: "https://www.aixploria.com/en/tool/playground-ai/"},
+                    {name: "DreamStudio", url: "https://www.aixploria.com/en/tool/dreamstudio/"},
+                    {name: "Adobe Firefly", url: "https://www.aixploria.com/en/tool/adobe-firefly/"},
+                    {name: "Bing Image Creator", url: "https://www.aixploria.com/en/tool/bing-image-creator/"},
+                    {name: "NightCafe", url: "https://www.aixploria.com/en/tool/nightcafe/"},
+                    {name: "StarryAI", url: "https://www.aixploria.com/en/tool/starryai/"},
+                    {name: "Wombo Dream", url: "https://www.aixploria.com/en/tool/wombo-dream/"},
+                    {name: "Craiyon", url: "https://www.aixploria.com/en/tool/craiyon/"},
+                    {name: "DeepAI", url: "https://www.aixploria.com/en/tool/deepai/"},
+                    {name: "Artbreeder", url: "https://www.aixploria.com/en/tool/artbreeder/"},
+                    {name: "GetIMG", url: "https://www.aixploria.com/en/tool/getimg/"},
+                    {name: "Krea AI", url: "https://www.aixploria.com/en/tool/krea-ai/"},
+                    {name: "Kaiber", url: "https://www.aixploria.com/en/tool/kaiber/"},
+                    {name: "Runway ML", url: "https://www.aixploria.com/en/tool/runway-ml/"},
+                    {name: "Pika Labs", url: "https://www.aixploria.com/en/tool/pika-labs/"},
+                    {name: "ClipDrop", url: "https://www.aixploria.com/en/tool/clipdrop/"},
+                    {name: "Magic Eraser", url: "https://www.aixploria.com/en/tool/magic-eraser/"},
+                    {name: "Cleanup Pictures", url: "https://www.aixploria.com/en/tool/cleanup-pictures/"},
+                    {name: "Remove BG", url: "https://www.aixploria.com/en/tool/remove-bg/"},
+                    {name: "PhotoRoom", url: "https://www.aixploria.com/en/tool/photoroom/"},
+                    {name: "Erase BG", url: "https://www.aixploria.com/en/tool/erase-bg/"},
+                    {name: "Slazzer", url: "https://www.aixploria.com/en/tool/slazzer/"},
+                    {name: "Unscreen", url: "https://www.aixploria.com/en/tool/unscreen/"},
+                    {name: "Kaleido", url: "https://www.aixploria.com/en/tool/kaleido/"},
+                    {name: "Designify", url: "https://www.aixploria.com/en/tool/designify/"},
+                    {name: "Canva AI", url: "https://www.aixploria.com/en/tool/canva-ai/"},
+                    {name: "VistaCreate", url: "https://www.aixploria.com/en/tool/vistacreate/"},
+                    {name: "Glorify", url: "https://www.aixploria.com/en/tool/glorify/"},
+                    {name: "Pebblely", url: "https://www.aixploria.com/en/tool/pebblely/"},
+                    {name: "Flair AI", url: "https://www.aixploria.com/en/tool/flair-ai/"},
+                    {name: "Booth AI", url: "https://www.aixploria.com/en/tool/booth-ai/"},
+                    {name: "Mokker", url: "https://www.aixploria.com/en/tool/mokker/"},
+                    {name: "Zmo AI", url: "https://www.aixploria.com/en/tool/zmo-ai/"},
+                    {name: "iPol", url: "https://www.aixploria.com/en/tool/ipol/"},
+                    {name: "Stylized", url: "https://www.aixploria.com/en/tool/stylized/"},
+                    {name: "Looka", url: "https://www.aixploria.com/en/tool/looka/"},
+                    {name: "Brandmark", url: "https://www.aixploria.com/en/tool/brandmark/"},
+                    {name: "Namelix", url: "https://www.aixploria.com/en/tool/namelix/"},
+                    {name: "LogoAI", url: "https://www.aixploria.com/en/tool/logoai/"},
+                    {name: "Tailor Brands", url: "https://www.aixploria.com/en/tool/tailor-brands/"},
+                    {name: "Hatchful", url: "https://www.aixploria.com/en/tool/hatchful/"},
+                    {name: "DesignEvo", url: "https://www.aixploria.com/en/tool/designevo/"},
+                    {name: "Placeit", url: "https://www.aixploria.com/en/tool/placeit/"},
+                    {name: "Uizard", url: "https://www.aixploria.com/en/tool/uizard/"},
+                    {name: "Galileo AI", url: "https://www.aixploria.com/en/tool/galileo-ai/"},
+                    {name: "Visily", url: "https://www.aixploria.com/en/tool/visily/"},
+                    {name: "TeleportHQ", url: "https://www.aixploria.com/en/tool/teleporthq/"},
+                    {name: "Locofy", url: "https://www.aixploria.com/en/tool/locofy/"},
+                    {name: "Anima", url: "https://www.aixploria.com/en/tool/anima/"},
+                    {name: "Framer AI", url: "https://www.aixploria.com/en/tool/framer-ai/"},
+                    {name: "Webflow AI", url: "https://www.aixploria.com/en/tool/webflow-ai/"},
+                    {name: "10Web", url: "https://www.aixploria.com/en/tool/10web/"},
+                    {name: "Durable", url: "https://www.aixploria.com/en/tool/durable/"},
+                    {name: "Hocoos", url: "https://www.aixploria.com/en/tool/hocoos/"},
+                    {name: "Mixo", url: "https://www.aixploria.com/en/tool/mixo/"},
+                    {name: "Pineapple Builder", url: "https://www.aixploria.com/en/tool/pineapple-builder/"},
+                    {name: "Framer", url: "https://www.aixploria.com/en/tool/framer/"},
+                    {name: "Imagica", url: "https://www.aixploria.com/en/tool/imagica/"},
+                    {name: "Builder.io", url: "https://www.aixploria.com/en/tool/builder-io/"},
+                    {name: "Softr", url: "https://www.aixploria.com/en/tool/softr/"},
+                    {name: "Bubble", url: "https://www.aixploria.com/en/tool/bubble/"},
+                    {name: "Glide", url: "https://www.aixploria.com/en/tool/glide/"},
+                    {name: "Adalo", url: "https://www.aixploria.com/en/tool/adalo/"},
+                    {name: "FlutterFlow", url: "https://www.aixploria.com/en/tool/flutterflow/"},
+                    {name: "Retary", url: "https://www.aixploria.com/en/tool/retary/"},
+                    {name: "AutoDraw", url: "https://www.aixploria.com/en/tool/autodraw/"},
+                    {name: "Scribble Diffusion", url: "https://www.aixploria.com/en/tool/scribble-diffusion/"},
+                    {name: "Monster Mash", url: "https://www.aixploria.com/en/tool/monster-mash/"},
+                    {name: "Sketch Meta", url: "https://www.aixploria.com/en/tool/sketch-meta/"},
+                    {name: "Nvidia Canvas", url: "https://www.aixploria.com/en/tool/nvidia-canvas/"},
+                    {name: "GauGAN2", url: "https://www.aixploria.com/en/tool/gaugan2/"},
+                    {name: "This Person Does Not Exist", url: "https://www.aixploria.com/en/tool/this-person-does-not-exist/"},
+                    {name: "Generated Photos", url: "https://www.aixploria.com/en/tool/generated-photos/"},
+                    {name: "Rosebud AI", url: "https://www.aixploria.com/en/tool/rosebud-ai/"},
+                    {name: "Synthesys X", url: "https://www.aixploria.com/en/tool/synthesys-x/"},
+                    {name: "Lexica", url: "https://www.aixploria.com/en/tool/lexica/"},
+                    {name: "Civita AI", url: "https://www.aixploria.com/en/tool/civita-ai/"},
+                    {name: "Hugging Face Diffusers", url: "https://www.aixploria.com/en/tool/hugging-face-diffusers/"},
+                    {name: "Replicate", url: "https://www.aixploria.com/en/tool/replicate/"},
+                    {name: "Mage Space", url: "https://www.aixploria.com/en/tool/mage-space/"},
+                    {name: "InstantArt", url: "https://www.aixploria.com/en/tool/instantart/"},
+                    {name: "Neural Love", url: "https://www.aixploria.com/en/tool/neural-love/"},
+                    {name: "Hotpot AI", url: "https://www.aixploria.com/en/tool/hotpot-ai/"},
+                    {name: "Vance AI", url: "https://www.aixploria.com/en/tool/vance-ai/"},
+                    {name: "Let's Enhance", url: "https://www.aixploria.com/en/tool/letsenhance/"},
+                    {name: "Icons8 Upscaler", url: "https://www.aixploria.com/en/tool/icons8-upscaler/"},
+                    {name: "BigJPG", url: "https://www.aixploria.com/en/tool/bigjpg/"},
+                    {name: "Waifu2x", url: "https://www.aixploria.com/en/tool/waifu2x/"},
+                    {name: "Upscayl", url: "https://www.aixploria.com/en/tool/upscayl/"},
+                    {name: "Topaz Gigapixel", url: "https://www.aixploria.com/en/tool/topaz-gigapixel/"},
+                    {name: "Remini", url: "https://www.aixploria.com/en/tool/remini/"},
+                    {name: "Cutout.pro", url: "https://www.aixploria.com/en/tool/cutout-pro/"},
+                    {name: "PicWish", url: "https://www.aixploria.com/en/tool/picwish/"},
+                    {name: "SnapEdit", url: "https://www.aixploria.com/en/tool/snapedit/"},
+                    {name: "Inpaint Web", url: "https://www.aixploria.com/en/tool/inpaint-web/"},
+                    {name: "Lama Cleaner", url: "https://www.aixploria.com/en/tool/lama-cleaner/"},
+                    {name: "Palette.fm", url: "https://www.aixploria.com/en/tool/palette-fm/"},
+                    {name: "Colorize Images", url: "https://www.aixploria.com/en/tool/colorize-images/"},
+                    {name: "MyHeritage Nostalgia", url: "https://www.aixploria.com/en/tool/myheritage-nostalgia/"},
+                    {name: "Deep Nostalgia", url: "https://www.aixploria.com/en/tool/deep-nostalgia/"},
+                    {name: "RestorePhotos", url: "https://www.aixploria.com/en/tool/restorephotos/"},
+                    {name: "Watermark Remover", url: "https://www.aixploria.com/en/tool/watermark-remover/"},
+                    {name: "Vectorizer.ai", url: "https://www.aixploria.com/en/tool/vectorizer-ai/"},
+                    {name: "SVG Converter", url: "https://www.aixploria.com/en/tool/svg-converter/"},
+                    {name: "AutoDraw", url: "https://www.aixploria.com/en/tool/autodraw/"},
+                    {name: "Sketch to Image", url: "https://www.aixploria.com/en/tool/sketch-to-image/"},
+                    {name: "Lensa AI", url: "https://www.aixploria.com/en/tool/lensa-ai/"},
+                    {name: "Dawn AI", url: "https://www.aixploria.com/en/tool/dawn-ai/"},
+                    {name: "Avatar AI", url: "https://www.aixploria.com/en/tool/avatar-ai/"},
+                    {name: "Profile Pic Maker", url: "https://www.aixploria.com/en/tool/profile-pic-maker/"}
+                ]
+            },
+            {
+                title: "AI Video, Audio & Music",
+                icon: "fas fa-video",
+                iconColor: "text-red-500",
+                hoverColor: "hover:text-red-500",
+                links: [
+                    {name: "Runway Gen-2", url: "https://www.aixploria.com/en/tool/runway-gen-2/"},
+                    {name: "Sora AI", url: "https://www.aixploria.com/en/tool/sora-ai/"},
+                    {name: "Pika Art", url: "https://www.aixploria.com/en/tool/pika-art/"},
+                    {name: "HeyGen", url: "https://www.aixploria.com/en/tool/heygen/"},
+                    {name: "Synthesia", url: "https://www.aixploria.com/en/tool/synthesia/"},
+                    {name: "D-ID", url: "https://www.aixploria.com/en/tool/d-id/"},
+                    {name: "Elai.io", url: "https://www.aixploria.com/en/tool/elai-io/"},
+                    {name: "Colossyan", url: "https://www.aixploria.com/en/tool/colossyan/"},
+                    {name: "Hour One", url: "https://www.aixploria.com/en/tool/hour-one/"},
+                    {name: "DeepBrain AI", url: "https://www.aixploria.com/en/tool/deepbrain-ai/"},
+                    {name: "Synthesys", url: "https://www.aixploria.com/en/tool/synthesys/"},
+                    {name: "Yepic AI", url: "https://www.aixploria.com/en/tool/yepic-ai/"},
+                    {name: "Tavus", url: "https://www.aixploria.com/en/tool/tavus/"},
+                    {name: "BHuman", url: "https://www.aixploria.com/en/tool/bhuman/"},
+                    {name: "Gan.ai", url: "https://www.aixploria.com/en/tool/gan-ai/"},
+                    {name: "Rephrase.ai", url: "https://www.aixploria.com/en/tool/rephrase-ai/"},
+                    {name: "Descript", url: "https://www.aixploria.com/en/tool/descript/"},
+                    {name: "Wondershare Filmora", url: "https://www.aixploria.com/en/tool/wondershare-filmora/"},
+                    {name: "Adobe Premiere Pro AI", url: "https://www.aixploria.com/en/tool/adobe-premiere-pro-ai/"},
+                    {name: "DaVinci Resolve", url: "https://www.aixploria.com/en/tool/davinci-resolve/"},
+                    {name: "CapCut", url: "https://www.aixploria.com/en/tool/capcut/"},
+                    {name: "Opus Clip", url: "https://www.aixploria.com/en/tool/opus-clip/"},
+                    {name: "Munch", url: "https://www.aixploria.com/en/tool/munch/"},
+                    {name: "Klap", url: "https://www.aixploria.com/en/tool/klap/"},
+                    {name: "Dumme", url: "https://www.aixploria.com/en/tool/dumme/"},
+                    {name: "Choppity", url: "https://www.aixploria.com/en/tool/choppity/"},
+                    {name: "Vidyo.ai", url: "https://www.aixploria.com/en/tool/vidyo-ai/"},
+                    {name: "Gling", url: "https://www.aixploria.com/en/tool/gling/"},
+                    {name: "Wisecut", url: "https://www.aixploria.com/en/tool/wisecut/"},
+                    {name: "Pictory", url: "https://www.aixploria.com/en/tool/pictory/"},
+                    {name: "InVideo", url: "https://www.aixploria.com/en/tool/invideo/"},
+                    {name: "Fliki", url: "https://www.aixploria.com/en/tool/fliki/"},
+                    {name: "Steve AI", url: "https://www.aixploria.com/en/tool/steve-ai/"},
+                    {name: "Lumen5", url: "https://www.aixploria.com/en/tool/lumen5/"},
+                    {name: "Animoto", url: "https://www.aixploria.com/en/tool/animoto/"},
+                    {name: "Promo.com", url: "https://www.aixploria.com/en/tool/promo-com/"},
+                    {name: "VEED.IO", url: "https://www.aixploria.com/en/tool/veed-io/"},
+                    {name: "Kapwing", url: "https://www.aixploria.com/en/tool/kapwing/"},
+                    {name: "Clipchamp", url: "https://www.aixploria.com/en/tool/clipchamp/"},
+                    {name: "ElevenLabs", url: "https://www.aixploria.com/en/tool/elevenlabs/"},
+                    {name: "Murf AI", url: "https://www.aixploria.com/en/tool/murf-ai/"},
+                    {name: "Play.ht", url: "https://www.aixploria.com/en/tool/play-ht/"},
+                    {name: "Resemble AI", url: "https://www.aixploria.com/en/tool/resemble-ai/"},
+                    {name: "WellSaid Labs", url: "https://www.aixploria.com/en/tool/wellsaid-labs/"},
+                    {name: "Lovo", url: "https://www.aixploria.com/en/tool/lovo/"},
+                    {name: "Uberduck", url: "https://www.aixploria.com/en/tool/uberduck/"},
+                    {name: "Speechify", url: "https://www.aixploria.com/en/tool/speechify/"},
+                    {name: "NaturalReader", url: "https://www.aixploria.com/en/tool/naturalreader/"},
+                    {name: "Listnr", url: "https://www.aixploria.com/en/tool/listnr/"},
+                    {name: "BeyondWords", url: "https://www.aixploria.com/en/tool/beyondwords/"},
+                    {name: "Descript Overdub", url: "https://www.aixploria.com/en/tool/descript-overdub/"},
+                    {name: "Voice AI", url: "https://www.aixploria.com/en/tool/voice-ai/"},
+                    {name: "Voicemod", url: "https://www.aixploria.com/en/tool/voicemod/"},
+                    {name: "Altered", url: "https://www.aixploria.com/en/tool/altered/"},
+                    {name: "MetaVoice", url: "https://www.aixploria.com/en/tool/metavoice/"},
+                    {name: "RVC", url: "https://www.aixploria.com/en/tool/rvc/"},
+                    {name: "Suno AI", url: "https://www.aixploria.com/en/tool/suno-ai/"},
+                    {name: "Udio", url: "https://www.aixploria.com/en/tool/udio/"},
+                    {name: "Soundraw", url: "https://www.aixploria.com/en/tool/soundraw/"},
+                    {name: "Boomy", url: "https://www.aixploria.com/en/tool/boomy/"},
+                    {name: "AIVA", url: "https://www.aixploria.com/en/tool/aiva/"},
+                    {name: "Mubert", url: "https://www.aixploria.com/en/tool/mubert/"},
+                    {name: "Beatoven.ai", url: "https://www.aixploria.com/en/tool/beatoven-ai/"},
+                    {name: "Soundful", url: "https://www.aixploria.com/en/tool/soundful/"},
+                    {name: "Ecrett Music", url: "https://www.aixploria.com/en/tool/ecrett-music/"},
+                    {name: "Loudly", url: "https://www.aixploria.com/en/tool/loudly/"},
+                    {name: "Cassette AI", url: "https://www.aixploria.com/en/tool/cassette-ai/"},
+                    {name: "Splash Music", url: "https://www.aixploria.com/en/tool/splash-music/"},
+                    {name: "Harmonai", url: "https://www.aixploria.com/en/tool/harmonai/"},
+                    {name: "AudioCraft", url: "https://www.aixploria.com/en/tool/audiocraft/"},
+                    {name: "MusicLM", url: "https://www.aixploria.com/en/tool/musiclm/"},
+                    {name: "Riffusion", url: "https://www.aixploria.com/en/tool/riffusion/"},
+                    {name: "Lalal.ai", url: "https://www.aixploria.com/en/tool/lalal-ai/"},
+                    {name: "Splitter.ai", url: "https://www.aixploria.com/en/tool/splitter-ai/"},
+                    {name: "Vocal Remover", url: "https://www.aixploria.com/en/tool/vocal-remover/"},
+                    {name: "Moises", url: "https://www.aixploria.com/en/tool/moises/"},
+                    {name: "Fadr", url: "https://www.aixploria.com/en/tool/fadr/"},
+                    {name: "AudioStrip", url: "https://www.aixploria.com/en/tool/audiostrip/"},
+                    {name: "Cleanvoice", url: "https://www.aixploria.com/en/tool/cleanvoice/"},
+                    {name: "Adobe Podcast", url: "https://www.aixploria.com/en/tool/adobe-podcast/"},
+                    {name: "Krisp Audio", url: "https://www.aixploria.com/en/tool/krisp-audio/"},
+                    {name: "Auphonic", url: "https://www.aixploria.com/en/tool/auphonic/"},
+                    {name: "Dolby.io", url: "https://www.aixploria.com/en/tool/dolby-io/"},
+                    {name: "Hindenburg", url: "https://www.aixploria.com/en/tool/hindenburg/"},
+                    {name: "Descript Studio Sound", url: "https://www.aixploria.com/en/tool/descript-studio-sound/"},
+                    {name: "Audacity AI", url: "https://www.aixploria.com/en/tool/audacity-ai/"},
+                    {name: "iZotope RX", url: "https://www.aixploria.com/en/tool/izotope-rx/"},
+                    {name: "Waves Plugins", url: "https://www.aixploria.com/en/tool/waves-plugins/"},
+                    {name: "Landr", url: "https://www.aixploria.com/en/tool/landr/"},
+                    {name: "eMastered", url: "https://www.aixploria.com/en/tool/emastered/"},
+                    {name: "CloudBounce", url: "https://www.aixploria.com/en/tool/cloudbounce/"},
+                    {name: "Maztr", url: "https://www.aixploria.com/en/tool/maztr/"},
+                    {name: "AIMastering", url: "https://www.aixploria.com/en/tool/aimastering/"},
+                    {name: "BandLab Mastering", url: "https://www.aixploria.com/en/tool/bandlab-mastering/"},
+                    {name: "SoundCloud Mastering", url: "https://www.aixploria.com/en/tool/soundcloud-mastering/"},
+                    {name: "Voice Cloning", url: "https://www.aixploria.com/en/tool/voice-cloning/"},
+                    {name: "ElevenLabs Voice", url: "https://www.aixploria.com/en/tool/elevenlabs-voice/"},
+                    {name: "My Shell", url: "https://www.aixploria.com/en/tool/my-shell/"},
+                    {name: "Tortoise TTS", url: "https://www.aixploria.com/en/tool/tortoise-tts/"},
+                    {name: "Bark TTS", url: "https://www.aixploria.com/en/tool/bark-tts/"},
+                    {name: "VALL-E", url: "https://www.aixploria.com/en/tool/vall-e/"},
+                    {name: "Coqui TTS", url: "https://www.aixploria.com/en/tool/coqui-tts/"},
+                    {name: "Piper TTS", url: "https://www.aixploria.com/en/tool/piper-tts/"},
+                    {name: "Mimic 3", url: "https://www.aixploria.com/en/tool/mimic-3/"},
+                    {name: "Rhubarb Lip Sync", url: "https://www.aixploria.com/en/tool/rhubarb-lip-sync/"},
+                    {name: "Nvidia Audio2Face", url: "https://www.aixploria.com/en/tool/nvidia-audio2face/"},
+                    {name: "Omniverse Audio2Face", url: "https://www.aixploria.com/en/tool/omniverse-audio2face/"},
+                    {name: "Reallusion", url: "https://www.aixploria.com/en/tool/reallusion/"},
+                    {name: "iClone", url: "https://www.aixploria.com/en/tool/iclone/"},
+                    {name: "Character Animator", url: "https://www.aixploria.com/en/tool/character-animator/"},
+                    {name: "EbSynth", url: "https://www.aixploria.com/en/tool/ebsynth/"},
+                    {name: "Deforum", url: "https://www.aixploria.com/en/tool/deforum/"},
+                    {name: "Zeroscope", url: "https://www.aixploria.com/en/tool/zeroscope/"},
+                    {name: "ModelScope", url: "https://www.aixploria.com/en/tool/modelscope/"},
+                    {name: "Animate Diff", url: "https://www.aixploria.com/en/tool/animate-diff/"}
+                ]
+            },
+            {
+                title: "AI Coding & Business",
+                icon: "fas fa-laptop-code",
+                iconColor: "text-blue-500",
+                hoverColor: "hover:text-blue-500",
+                links: [
+                    {name: "GitHub Copilot", url: "https://www.aixploria.com/en/tool/github-copilot/"},
+                    {name: "Replit Ghostwriter", url: "https://www.aixploria.com/en/tool/replit-ghostwriter/"},
+                    {name: "Tabnine", url: "https://www.aixploria.com/en/tool/tabnine/"},
+                    {name: "Codeium", url: "https://www.aixploria.com/en/tool/codeium/"},
+                    {name: "Amazon CodeWhisperer", url: "https://www.aixploria.com/en/tool/amazon-codewhisperer/"},
+                    {name: "Sourcegraph Cody", url: "https://www.aixploria.com/en/tool/sourcegraph-cody/"},
+                    {name: "Cursor", url: "https://www.aixploria.com/en/tool/cursor/"},
+                    {name: "Mutable AI", url: "https://www.aixploria.com/en/tool/mutable-ai/"},
+                    {name: "Figstack", url: "https://www.aixploria.com/en/tool/figstack/"},
+                    {name: "Blackbox AI", url: "https://www.aixploria.com/en/tool/blackbox-ai/"},
+                    {name: "Adrenaline", url: "https://www.aixploria.com/en/tool/adrenaline/"},
+                    {name: "CodePal", url: "https://www.aixploria.com/en/tool/codepal/"},
+                    {name: "AskCodi", url: "https://www.aixploria.com/en/tool/askcodi/"},
+                    {name: "CodeGeeX", url: "https://www.aixploria.com/en/tool/codegeex/"},
+                    {name: "CodeLlama", url: "https://www.aixploria.com/en/tool/codellama/"},
+                    {name: "StarCoder", url: "https://www.aixploria.com/en/tool/starcoder/"},
+                    {name: "WizardCoder", url: "https://www.aixploria.com/en/tool/wizardcoder/"},
+                    {name: "AlphaCode", url: "https://www.aixploria.com/en/tool/alphacode/"},
+                    {name: "DeepCode", url: "https://www.aixploria.com/en/tool/deepcode/"},
+                    {name: "Snyk", url: "https://www.aixploria.com/en/tool/snyk/"},
+                    {name: "SonarQube", url: "https://www.aixploria.com/en/tool/sonarqube/"},
+                    {name: "TensorFlow", url: "https://www.aixploria.com/en/tool/tensorflow/"},
+                    {name: "PyTorch", url: "https://www.aixploria.com/en/tool/pytorch/"},
+                    {name: "Keras", url: "https://www.aixploria.com/en/tool/keras/"},
+                    {name: "Scikit-learn", url: "https://www.aixploria.com/en/tool/scikit-learn/"},
+                    {name: "Pandas AI", url: "https://www.aixploria.com/en/tool/pandas-ai/"},
+                    {name: "NumPy", url: "https://www.aixploria.com/en/tool/numpy/"},
+                    {name: "Matplotlib", url: "https://www.aixploria.com/en/tool/matplotlib/"},
+                    {name: "Seaborn", url: "https://www.aixploria.com/en/tool/seaborn/"},
+                    {name: "Hugging Face", url: "https://www.aixploria.com/en/tool/hugging-face/"},
+                    {name: "LangChain", url: "https://www.aixploria.com/en/tool/langchain/"},
+                    {name: "AutoGPT", url: "https://www.aixploria.com/en/tool/autogpt/"},
+                    {name: "BabyAGI", url: "https://www.aixploria.com/en/tool/babyagi/"},
+                    {name: "AgentGPT", url: "https://www.aixploria.com/en/tool/agentgpt/"},
+                    {name: "Godmode", url: "https://www.aixploria.com/en/tool/godmode/"},
+                    {name: "ChaosGPT", url: "https://www.aixploria.com/en/tool/chaosgpt/"},
+                    {name: "AutoGen", url: "https://www.aixploria.com/en/tool/autogen/"},
+                    {name: "MetaGPT", url: "https://www.aixploria.com/en/tool/metagpt/"},
+                    {name: "ChatDev", url: "https://www.aixploria.com/en/tool/chatdev/"},
+                    {name: "Open Interpreter", url: "https://www.aixploria.com/en/tool/open-interpreter/"},
+                    {name: "MemGPT", url: "https://www.aixploria.com/en/tool/memgpt/"},
+                    {name: "PrivateGPT", url: "https://www.aixploria.com/en/tool/privategpt/"},
+                    {name: "LocalGPT", url: "https://www.aixploria.com/en/tool/localgpt/"},
+                    {name: "h2oGPT", url: "https://www.aixploria.com/en/tool/h2ogpt/"},
+                    {name: "GPT4All", url: "https://www.aixploria.com/en/tool/gpt4all/"},
+                    {name: "Llama 2", url: "https://www.aixploria.com/en/tool/llama-2/"},
+                    {name: "Falcon LLM", url: "https://www.aixploria.com/en/tool/falcon-llm/"},
+                    {name: "Mistral AI", url: "https://www.aixploria.com/en/tool/mistral-ai/"},
+                    {name: "Vicuna", url: "https://www.aixploria.com/en/tool/vicuna/"},
+                    {name: "Alpaca", url: "https://www.aixploria.com/en/tool/alpaca/"},
+                    {name: "Dolly", url: "https://www.aixploria.com/en/tool/dolly/"},
+                    {name: "MPT-7B", url: "https://www.aixploria.com/en/tool/mpt-7b/"},
+                    {name: "RedPajama", url: "https://www.aixploria.com/en/tool/redpajama/"},
+                    {name: "Orca", url: "https://www.aixploria.com/en/tool/orca/"},
+                    {name: "Guanaco", url: "https://www.aixploria.com/en/tool/guanaco/"}
+                ]
+            },
+            {
+                title: "Content & Text Tools",
+                icon: "fas fa-file-alt",
+                iconColor: "text-emerald-400",
+                hoverColor: "hover:text-emerald-400",
+                links: [
+                    {name: "Article Rewriter", url: "https://seostudio.tools/article-rewriter"},
+                    {name: "Word Counter", url: "https://seostudio.tools/word-counter"},
+                    {name: "Backwards Text Generator", url: "https://seostudio.tools/backwards-text-generator"},
+                    {name: "Text to Hashtags", url: "https://seostudio.tools/text-to-hashtags-converter"},
+                    {name: "Text Compare", url: "https://seostudio.tools/text-compare"},
+                    {name: "Text to Slug", url: "https://seostudio.tools/text-to-slug-converter"},
+                    {name: "Lorem Ipsum Generator", url: "https://seostudio.tools/lorem-ipsum-generator"},
+                    {name: "Case Converter", url: "https://seostudio.tools/case-converter"},
+                    {name: "Remove Line Breaks", url: "https://seostudio.tools/remove-line-breaks"},
+                    {name: "Random Word Generator", url: "https://seostudio.tools/random-word-generator"},
+                    {name: "Text Repeater", url: "https://seostudio.tools/text-repeater"},
+                    {name: "Text Sorter", url: "https://seostudio.tools/text-sorter"},
+                    {name: "Comma Separator", url: "https://seostudio.tools/comma-separator"},
+                    {name: "Number to Word", url: "https://seostudio.tools/number-to-word-converter"},
+                    {name: "Word to Number", url: "https://seostudio.tools/word-to-number-converter"},
+                    {name: "Text to Tags", url: "https://seostudio.tools/text-to-tags-converter"}
+                ]
+            },
+            {
+                title: "YouTube Tools",
+                icon: "fab fa-youtube",
+                iconColor: "text-red-500",
+                hoverColor: "hover:text-red-500",
+                links: [
+                    {name: "Video Downloader", url: "https://seostudio.tools/youtube-video-downloader"},
+                    {name: "Tag Extractor", url: "https://seostudio.tools/youtube-tag-extractor"},
+                    {name: "Tag Generator", url: "https://seostudio.tools/youtube-tag-generator"},
+                    {name: "Hashtag Extractor", url: "https://seostudio.tools/youtube-hashtag-extractor"},
+                    {name: "Hashtag Generator", url: "https://seostudio.tools/youtube-hashtag-generator"},
+                    {name: "Title Extractor", url: "https://seostudio.tools/youtube-title-extractor"},
+                    {name: "Title Generator", url: "https://seostudio.tools/youtube-title-generator"},
+                    {name: "Title Length Checker", url: "https://seostudio.tools/youtube-title-length-checker"},
+                    {name: "Description Extractor", url: "https://seostudio.tools/youtube-description-extractor"},
+                    {name: "Description Generator", url: "https://seostudio.tools/youtube-description-generator"},
+                    {name: "Embed Code Generator", url: "https://seostudio.tools/youtube-embed-code-generator"},
+                    {name: "Channel ID Extractor", url: "https://seostudio.tools/youtube-channel-id-extractor"},
+                    {name: "Video Statistics", url: "https://seostudio.tools/youtube-video-statistics"},
+                    {name: "Channel Statistics", url: "https://seostudio.tools/youtube-channel-statistics"},
+                    {name: "Region Restriction Checker", url: "https://seostudio.tools/youtube-region-restriction-checker"},
+                    {name: "Channel Logo Downloader", url: "https://seostudio.tools/youtube-channel-logo-downloader"},
+                    {name: "Channel Banner Downloader", url: "https://seostudio.tools/youtube-channel-banner-downloader"},
+                    {name: "Channel Finder", url: "https://seostudio.tools/youtube-channel-finder"},
+                    {name: "Thumbnail Downloader", url: "https://seostudio.tools/youtube-thumbnail-downloader"},
+                    {name: "Timestamp Link Generator", url: "https://seostudio.tools/youtube-timestamp-link-generator"},
+                    {name: "Subscribe Link Generator", url: "https://seostudio.tools/youtube-subscribe-link-generator"},
+                    {name: "Money Calculator", url: "https://seostudio.tools/youtube-money-calculator"},
+                    {name: "Video Count Checker", url: "https://seostudio.tools/youtube-video-count-checker"},
+                    {name: "Title Capitalizer", url: "https://seostudio.tools/youtube-video-title-capitalizer"},
+                    {name: "Comment Picker", url: "https://seostudio.tools/youtube-comment-picker"},
+                    {name: "Views Ratio Calculator", url: "https://seostudio.tools/youtube-views-ratio-calculator"},
+                    {name: "Channel Age Checker", url: "https://seostudio.tools/youtube-channel-age-checker"}
+                ]
+            },
+            {
+                title: "SEO Tools",
+                icon: "fas fa-search-dollar",
+                iconColor: "text-blue-400",
+                hoverColor: "hover:text-blue-400",
+                links: [
+                    {name: "Website Ranking Checker", url: "https://seostudio.tools/website-ranking-checker"},
+                    {name: "Keywords Suggestion Tool", url: "https://seostudio.tools/keywords-suggestion-tool"},
+                    {name: "Keyword Density Checker", url: "https://seostudio.tools/keyword-density-checker"},
+                    {name: "Google Cache Checker", url: "https://seostudio.tools/google-cache-checker"},
+                    {name: "Google Index Checker", url: "https://seostudio.tools/google-index-checker"},
+                    {name: "Meta Tag Generator", url: "https://seostudio.tools/meta-tag-generator"},
+                    {name: "Meta Tag Analyzer", url: "https://seostudio.tools/meta-tag-analyzer"},
+                    {name: "Open Graph Checker", url: "https://seostudio.tools/open-graph-checker"},
+                    {name: "Open Graph Generator", url: "https://seostudio.tools/open-graph-generator"},
+                    {name: "Twitter Card Generator", url: "https://seostudio.tools/twitter-card-generator"},
+                    {name: "UTM Builder", url: "https://seostudio.tools/utm-builder"}
+                ]
+            },
+            {
+                title: "Domain & IP Tools",
+                icon: "fas fa-globe",
+                iconColor: "text-indigo-400",
+                hoverColor: "hover:text-indigo-400",
+                links: [
+                    {name: "Domain to IP", url: "https://seostudio.tools/domain-to-ip-converter"},
+                    {name: "Domain Age Checker", url: "https://seostudio.tools/domain-age-checker"},
+                    {name: "Whois Domain Lookup", url: "https://seostudio.tools/whois-domain-lookup"},
+                    {name: "Hosting Checker", url: "https://seostudio.tools/hosting-checker"},
+                    {name: "DNS Records Checker", url: "https://seostudio.tools/dns-records-checker"},
+                    {name: "What is My IP", url: "https://seostudio.tools/what-is-my-ip-address"},
+                    {name: "IP Address Lookup", url: "https://seostudio.tools/ip-address-lookup"}
+                ]
+            },
+            {
+                title: "Website Management",
+                icon: "fas fa-cogs",
+                iconColor: "text-gray-400",
+                hoverColor: "hover:text-gray-400",
+                links: [
+                    {name: "Robots.txt Generator", url: "https://seostudio.tools/robots-txt-generator"},
+                    {name: "HTTP Status Checker", url: "https://seostudio.tools/http-status-code-checker"},
+                    {name: "Htaccess Redirect Generator", url: "https://seostudio.tools/htaccess-redirect-generator"},
+                    {name: "Server Status Checker", url: "https://seostudio.tools/server-status-checker"},
+                    {name: "Get HTTP Headers", url: "https://seostudio.tools/get-http-headers"},
+                    {name: "Page Size Checker", url: "https://seostudio.tools/page-size-checker"},
+                    {name: "WordPress Theme Detector", url: "https://seostudio.tools/wordpress-theme-detector"},
+                    {name: "URL Rewriting Tool", url: "https://seostudio.tools/url-rewriting-tool"},
+                    {name: "Redirect Checker", url: "https://seostudio.tools/redirect-checker"},
+                    {name: "FAQ Schema Generator", url: "https://seostudio.tools/faq-schema-generator"},
+                    {name: "Privacy Policy Generator", url: "https://seostudio.tools/privacy-policy-generator"},
+                    {name: "Terms & Conditions Generator", url: "https://seostudio.tools/terms-and-condition-generator"},
+                    {name: "Disclaimer Generator", url: "https://seostudio.tools/disclaimer-generator"},
+                    {name: "URL Decode", url: "https://seostudio.tools/url-decode"},
+                    {name: "URL Encode", url: "https://seostudio.tools/url-encode"},
+                    {name: "Random UUID Generator", url: "https://seostudio.tools/random-uuid-generator"},
+                    {name: "URL Parser", url: "https://seostudio.tools/url-parser"}
+                ]
+            },
+            {
+                title: "Web Development Tools",
+                icon: "fas fa-code",
+                iconColor: "text-yellow-400",
+                hoverColor: "hover:text-yellow-400",
+                links: [
+                    {name: "HTML Decoder", url: "https://seostudio.tools/html-decoder"},
+                    {name: "HTML Encoder", url: "https://seostudio.tools/html-encoder"},
+                    {name: "HTML Beautifier", url: "https://seostudio.tools/html-beautifier"},
+                    {name: "HTML Minifier", url: "https://seostudio.tools/html-minifier"},
+                    {name: "CSS Beautifier", url: "https://seostudio.tools/css-beautifier"},
+                    {name: "CSS Minifier", url: "https://seostudio.tools/css-minifier"},
+                    {name: "JS Beautifier", url: "https://seostudio.tools/javascript-beautifier"},
+                    {name: "JS Minifier", url: "https://seostudio.tools/javascript-minifier"},
+                    {name: "JS Deobfuscator", url: "https://seostudio.tools/javascript-deobfuscator"},
+                    {name: "JS Obfuscator", url: "https://seostudio.tools/javascript-obfuscator"},
+                    {name: "JSON to Schema", url: "https://seostudio.tools/json-to-json-schema"},
+                    {name: "JSON Viewer", url: "https://seostudio.tools/json-viewer"},
+                    {name: "JSON Formatter", url: "https://seostudio.tools/json-formatter"},
+                    {name: "JSON Validator", url: "https://seostudio.tools/json-validator"},
+                    {name: "JSON Editor", url: "https://seostudio.tools/json-editor"},
+                    {name: "JSON Minify", url: "https://seostudio.tools/json-minify"},
+                    {name: "XML to JSON", url: "https://seostudio.tools/xml-to-json-converter"},
+                    {name: "CSV to JSON", url: "https://seostudio.tools/csv-to-json-converter"},
+                    {name: "TSV to JSON", url: "https://seostudio.tools/tsv-to-json-converter"},
+                    {name: "JSON to XML", url: "https://seostudio.tools/json-to-xml-converter"},
+                    {name: "JSON to CSV", url: "https://seostudio.tools/json-to-csv-converter"},
+                    {name: "JSON to Text", url: "https://seostudio.tools/json-to-text-converter"},
+                    {name: "JSON to TSV", url: "https://seostudio.tools/json-to-tsv-converter"}
+                ]
+            },
+            {
+                title: "Image Editing Tools",
+                icon: "fas fa-images",
+                iconColor: "text-purple-400",
+                hoverColor: "hover:text-purple-400",
+                links: [
+                    {name: "Image Converter", url: "https://seostudio.tools/image-converter"},
+                    {name: "Convert to ICO", url: "https://seostudio.tools/convert-to-ico"},
+                    {name: "Image to Base64", url: "https://seostudio.tools/image-to-base64-converter"},
+                    {name: "Base64 to Image", url: "https://seostudio.tools/base64-to-image-converter"},
+                    {name: "Flip Image", url: "https://seostudio.tools/flip-image"},
+                    {name: "Rotate Image", url: "https://seostudio.tools/rotate-image"},
+                    {name: "Image Enlarger", url: "https://seostudio.tools/image-enlarger"},
+                    {name: "Image Cropper", url: "https://seostudio.tools/image-cropper"},
+                    {name: "Image Resizer", url: "https://seostudio.tools/image-resizer"},
+                    {name: "ICO to PNG", url: "https://seostudio.tools/ico-to-png-converter"},
+                    {name: "JPG to PNG", url: "https://seostudio.tools/jpg-to-png-converter"},
+                    {name: "PNG to JPG", url: "https://seostudio.tools/png-to-jpg-converter"},
+                    {name: "JPG Converter", url: "https://seostudio.tools/jpg-converter"},
+                    {name: "WebP to JPG", url: "https://seostudio.tools/webp-to-jpg-converter"},
+                    {name: "PNG to WebP", url: "https://seostudio.tools/png-to-webp-converter"},
+                    {name: "PNG to BMP", url: "https://seostudio.tools/png-to-bmp-converter"},
+                    {name: "PNG to GIF", url: "https://seostudio.tools/png-to-gif-converter"},
+                    {name: "PNG to ICO", url: "https://seostudio.tools/png-to-ico-converter"},
+                    {name: "JPG to WebP", url: "https://seostudio.tools/jpg-to-webp-converter"},
+                    {name: "JPG to BMP", url: "https://seostudio.tools/jpg-to-bmp-converter"},
+                    {name: "JPG to GIF", url: "https://seostudio.tools/jpg-to-gif-converter"},
+                    {name: "JPG to ICO", url: "https://seostudio.tools/jpg-to-ico-converter"},
+                    {name: "WebP to PNG", url: "https://seostudio.tools/webp-to-png-converter"}
+                ]
+            },
+            {
+                title: "Online Calculators",
+                icon: "fas fa-calculator",
+                iconColor: "text-orange-400",
+                hoverColor: "hover:text-orange-400",
+                links: [
+                    {name: "AdSense Calculator", url: "https://seostudio.tools/adsense-calculator"},
+                    {name: "Age Calculator", url: "https://seostudio.tools/age-calculator"},
+                    {name: "Percentage Calculator", url: "https://seostudio.tools/percentage-calculator"},
+                    {name: "Average Calculator", url: "https://seostudio.tools/average-calculator"},
+                    {name: "Confidence Interval", url: "https://seostudio.tools/confidence-interval-calculator"},
+                    {name: "Sales Tax Calculator", url: "https://seostudio.tools/sales-tax-calculator"},
+                    {name: "Margin Calculator", url: "https://seostudio.tools/margin-calculator"},
+                    {name: "Probability Calculator", url: "https://seostudio.tools/probability-calculator"},
+                    {name: "PayPal Fee Calculator", url: "https://seostudio.tools/paypal-fee-calculator"},
+                    {name: "Discount Calculator", url: "https://seostudio.tools/discount-calculator"},
+                    {name: "CPM Calculator", url: "https://seostudio.tools/cpm-calculator"},
+                    {name: "Loan Calculator", url: "https://seostudio.tools/loan-calculator"},
+                    {name: "GST Calculator", url: "https://seostudio.tools/gst-calculator"}
+                ]
+            },
+            {
+                title: "Unit Converters",
+                icon: "fas fa-exchange-alt",
+                iconColor: "text-green-500",
+                hoverColor: "hover:text-green-500",
+                links: [
+                    {name: "Length Converter", url: "https://seostudio.tools/length-converter"},
+                    {name: "Area Converter", url: "https://seostudio.tools/area-converter"},
+                    {name: "Weight Converter", url: "https://seostudio.tools/weight-converter"},
+                    {name: "Volume Converter", url: "https://seostudio.tools/volume-converter"},
+                    {name: "Temperature Converter", url: "https://seostudio.tools/temperature-converter"},
+                    {name: "Each Converter", url: "https://seostudio.tools/each-converter"},
+                    {name: "Time Converter", url: "https://seostudio.tools/time-converter"},
+                    {name: "Digital Converter", url: "https://seostudio.tools/digital-converter"},
+                    {name: "Parts Per Converter", url: "https://seostudio.tools/parts-per-converter"},
+                    {name: "Speed Converter", url: "https://seostudio.tools/speed-converter"},
+                    {name: "Pace Converter", url: "https://seostudio.tools/pace-converter"},
+                    {name: "Pressure Converter", url: "https://seostudio.tools/pressure-converter"},
+                    {name: "Current Converter", url: "https://seostudio.tools/current-converter"},
+                    {name: "Voltage Converter", url: "https://seostudio.tools/voltage-converter"},
+                    {name: "Power Converter", url: "https://seostudio.tools/power-converter"},
+                    {name: "Reactive Power Converter", url: "https://seostudio.tools/reactive-power-converter"},
+                    {name: "Apparent Power Converter", url: "https://seostudio.tools/apparent-power-converter"},
+                    {name: "Energy Converter", url: "https://seostudio.tools/energy-converter"},
+                    {name: "Reactive Energy Converter", url: "https://seostudio.tools/reactive-energy-converter"},
+                    {name: "Volumetric Flow Rate", url: "https://seostudio.tools/volumetric-flow-rate-converter"},
+                    {name: "Illuminance Converter", url: "https://seostudio.tools/illuminance-converter"},
+                    {name: "Frequency Converter", url: "https://seostudio.tools/frequency-converter"},
+                    {name: "Angle Converter", url: "https://seostudio.tools/angle-converter"},
+                    {name: "Currency Converter", url: "https://seostudio.tools/currency-converter"},
+                    {name: "Torque Converter", url: "https://seostudio.tools/torque-converter"},
+                    {name: "Charge Converter", url: "https://seostudio.tools/charge-converter"},
+                    {name: "Number to Roman", url: "https://seostudio.tools/number-to-roman-numerals"},
+                    {name: "Roman to Number", url: "https://seostudio.tools/roman-numerals-to-number"}
+                ]
+            },
+            {
+                title: "Binary Converters",
+                icon: "fas fa-laptop-code",
+                iconColor: "text-cyan-500",
+                hoverColor: "hover:text-cyan-500",
+                links: [
+                    {name: "Text to Binary", url: "https://seostudio.tools/text-to-binary-converter"},
+                    {name: "Binary to Text", url: "https://seostudio.tools/binary-to-text-converter"},
+                    {name: "Hex to Binary", url: "https://seostudio.tools/hex-to-binary-converter"},
+                    {name: "Binary to Hex", url: "https://seostudio.tools/binary-to-hex-converter"},
+                    {name: "ASCII to Binary", url: "https://seostudio.tools/ascii-to-binary-converter"},
+                    {name: "Binary to ASCII", url: "https://seostudio.tools/binary-to-ascii-converter"},
+                    {name: "Decimal to Binary", url: "https://seostudio.tools/decimal-to-binary-converter"},
+                    {name: "Binary to Decimal", url: "https://seostudio.tools/binary-to-decimal-converter"},
+                    {name: "Text to ASCII", url: "https://seostudio.tools/text-to-ascii-converter"},
+                    {name: "ASCII to Text", url: "https://seostudio.tools/ascii-to-text-converter"},
+                    {name: "Hex to Decimal", url: "https://seostudio.tools/hex-to-decimal-converter"},
+                    {name: "Decimal to Hex", url: "https://seostudio.tools/decimal-to-hex-converter"},
+                    {name: "Octal to Binary", url: "https://seostudio.tools/octal-to-binary-converter"},
+                    {name: "Binary to Octal", url: "https://seostudio.tools/binary-to-octal-converter"},
+                    {name: "Octal to Decimal", url: "https://seostudio.tools/octal-to-decimal-converter"},
+                    {name: "Decimal to Octal", url: "https://seostudio.tools/decimal-to-octal-converter"},
+                    {name: "Hex to Octal", url: "https://seostudio.tools/hex-to-octal-converter"},
+                    {name: "Octal to Hex", url: "https://seostudio.tools/octal-to-hex-converter"},
+                    {name: "Text to Octal", url: "https://seostudio.tools/text-to-octal-converter"},
+                    {name: "Octal to Text", url: "https://seostudio.tools/octal-to-text-converter"},
+                    {name: "Text to Hex", url: "https://seostudio.tools/text-to-hex-converter"},
+                    {name: "Hex to Text", url: "https://seostudio.tools/hex-to-text-converter"},
+                    {name: "Text to Decimal", url: "https://seostudio.tools/text-to-decimal-converter"},
+                    {name: "Decimal to Text", url: "https://seostudio.tools/decimal-to-text-converter"}
+                ]
+            },
+            {
+                title: "Miscellaneous Tools",
+                icon: "fas fa-box-open",
+                iconColor: "text-pink-400",
+                hoverColor: "hover:text-pink-400",
+                links: [
+                    {name: "What is My Browser", url: "https://seostudio.tools/what-is-my-browser"},
+                    {name: "What is My User Agent", url: "https://seostudio.tools/what-is-my-user-agent"},
+                    {name: "Screen Resolution", url: "https://seostudio.tools/what-is-my-screen-resolution"},
+                    {name: "Screen Res Simulator", url: "https://seostudio.tools/screen-resolution-simulator"},
+                    {name: "URL Opener", url: "https://seostudio.tools/url-opener"},
+                    {name: "Credit Card Generator", url: "https://seostudio.tools/credit-card-generator"},
+                    {name: "Credit Card Validator", url: "https://seostudio.tools/credit-card-validator"},
+                    {name: "QR Code Decoder", url: "https://seostudio.tools/qr-code-decoder"},
+                    {name: "QR Code Generator", url: "https://seostudio.tools/qr-code-generator"},
+                    {name: "Facebook ID Finder", url: "https://seostudio.tools/facebook-id-finder"},
+                    {name: "MD5 Generator", url: "https://seostudio.tools/md5-generator"},
+                    {name: "Base64 Decode", url: "https://seostudio.tools/base64-decode"},
+                    {name: "Base64 Encode", url: "https://seostudio.tools/base64-encode"},
+                    {name: "Color Converter", url: "https://seostudio.tools/color-converter"},
+                    {name: "Password Generator", url: "https://seostudio.tools/password-generator"},
+                    {name: "Convert VTT to SRT", url: "https://seostudio.tools/convert-vtt-to-srt"},
+                    {name: "Convert SRT to VTT", url: "https://seostudio.tools/convert-srt-to-vtt"},
+                    {name: "Hex to RGB", url: "https://seostudio.tools/hex-to-rgb-converter"},
+                    {name: "RGB to Hex", url: "https://seostudio.tools/rgb-to-hex-converter"}
+                ]
             }
         ];
 
-        // --- 2. CARD BANANE KA LOGIC (LOOP) ---
+        // --- 3. RENDER LOGIC ---
 
-        // HTML mein se main grid container ko chunein
         const gridContainer = document.getElementById('links-grid');
 
-        // 'linkData' list ke har item ke liye yeh loop chalayega
+        // Render helper function to keep code clean
+        function renderLinks(links, ul, category) {
+            links.forEach(link => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                
+                a.href = link.url;
+                a.target = '_blank';
+                a.className = `${category.hoverColor} hover:underline flex items-center group`; 
+
+                let iconHTML = '';
+
+                // --- SMART ICON LOGIC ---
+                // Agar seostudio tools hai ya generic tools hai, toh Smart Icon use karo
+                // Also enable for new AI categories
+                if (link.url.includes('seostudio.tools') || 
+                    link.url.includes('aixploria.com') ||
+                    link.name.toLowerCase().includes('calculator') || 
+                    link.name.toLowerCase().includes('converter') ||
+                    link.name.toLowerCase().includes('generator')) { 
+                    
+                    const iconClass = getSmartIcon(link.name);
+                    iconHTML = `<div class="w-6 h-6 mr-3 flex-shrink-0 flex items-center justify-center bg-white/10 rounded group-hover:bg-white/20 transition-colors">
+                                    <i class="${iconClass} text-sm"></i>
+                                </div>`;
+                } 
+                // Warna normal Favicon use karo (Movies, Anime etc ke liye)
+                else {
+                    let domain = 'google.com';
+                    try { domain = new URL(link.url).hostname; } catch(e) {}
+                    const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+                    
+                    iconHTML = `
+                        <div class="w-6 h-6 mr-3 flex-shrink-0 flex items-center justify-center bg-white/10 rounded overflow-hidden">
+                            <img src="${faviconUrl}" class="w-full h-full object-cover" alt="" loading="lazy" 
+                                onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\\'fas fa-link text-xs text-white/50\\'></i>'">
+                        </div>
+                    `;
+                }
+
+                a.innerHTML = `
+                    ${iconHTML}
+                    <span class="truncate">${link.name}</span>
+                    <span class="sr-only">(opens in new tab)</span> 
+                `;
+
+                li.appendChild(a);
+                ul.appendChild(li);
+            });
+        }
+
         linkData.forEach(category => {
-            
-            // 1. Naya card div banayein
             const card = document.createElement('div');
             card.className = 'card rounded-xl p-6';
 
-            // --- YAHAN BADLAV KIYA GAYA HAI ---
-            // Agar category "Free All Cources" YA "Free Typing Learn" hai, toh use full-width banayein
-            if (category.title === "Free All Cources" || category.title === "Free Typing Learn") {
+            // Large width logic
+            if (category.links.length > 10 || category.subcategories) {
                 card.className += ' sm:col-span-2 md:col-span-3 lg:col-span-4';
             }
-            // --- BADLAV KHATM ---
 
-            // 2. Category title (h2) banayein
             const title = document.createElement('h2');
             title.className = 'text-2xl font-semibold mb-4 text-white flex items-center';
-            // Icon aur Title text add karein
             title.innerHTML = `
                 <i class="${category.icon} mr-3 ${category.iconColor}" aria-hidden="true"></i>
                 ${category.title}
             `;
 
-            // 3. Links ke liye <ul> list banayein
             const ul = document.createElement('ul');
-            ul.className = 'space-y-2 text-white/90'; // Purane bullet points hata diye
+            ul.className = 'space-y-2 text-white/90'; 
+            
+            // Grid layout for large lists
+            if (category.links.length > 10) {
+                 ul.className = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-white/90';
+            }
 
-            // --- Inner Loop ---
-            // Ab har category ke 'links' array ke liye loop chalayega
-            category.links.forEach(link => {
-                // Har link ke liye <li> aur <a> tag banayein
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                
-                a.href = link.url;
-                a.target = '_blank'; // Naye tab mein kholne ke liye
-                // Icon ko align karne ke liye flex add kiya
-                a.className = `${category.hoverColor} hover:underline flex items-center`; 
-                
-                // Google Favicon service se icon URL banaya
-                const faviconUrl = `https://www.google.com/s2/favicons?domain=${link.url}`;
+            // Render Main Links
+            renderLinks(category.links, ul, category);
 
-                // Link text, icon, aur accessibility text add karein
-                a.innerHTML = `
-                    <img src="${faviconUrl}" class="w-4 h-4 mr-2 flex-shrink-0" alt="" loading="lazy" onerror="this.style.display='none'">
-                    <span>${link.name}</span>
-                    <span class="sr-only">(opens in new tab)</span> 
-                `;
-
-                // <a> ko <li> ke andar daalein
-                li.appendChild(a);
-                // <li> ko <ul> ke andar daalein
-                ul.appendChild(li);
-            });
-            // --- Inner Loop End ---
-
-            // --- NEW: Subcategory Loop (YEH NAYA ADD KIYA HAI) ---
+            // Render Subcategories (if any)
             if (category.subcategories && category.subcategories.length > 0) {
-                // Naya rectangle/container banayein
                 const subcatContainer = document.createElement('div');
-                
-                // --- YAHAN BADLAV KIYA GAYA HAI ---
-                // Subcategories ko grid mein dikhane ke liye classes add ki (isse length kam ho jayegi)
-                subcatContainer.className = 'mt-6 pt-4 border-t border-white/20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4'; // "rectangle"
-                // --- BADLAV KHATM ---
-
+                subcatContainer.className = 'mt-6 pt-4 border-t border-white/20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4';
 
                 category.subcategories.forEach(subcat => {
-
-                    // --- YAHAN BADLAV KIYA GAYA HAI ---
-                    // Har subcategory ke liye ek alag wrapper div banaya gaya hai
-                    // Taki grid layout sahi se kaam kare
                     const subcatWrapper = document.createElement('div');
-                    // --- BADLAV KHATM ---
-
-                    // Subcategory title (h3)
+                    
                     const subTitle = document.createElement('h3');
                     subTitle.className = 'text-xl font-semibold mb-3 text-white flex items-center';
                     subTitle.innerHTML = `
                         <i class="${subcat.icon} mr-3 ${subcat.iconColor}" aria-hidden="true"></i>
                         ${subcat.title}
                     `;
-                    subcatWrapper.appendChild(subTitle); // Title ko wrapper mein daala
+                    subcatWrapper.appendChild(subTitle);
 
-                    // Subcategory list (ul)
                     const subUl = document.createElement('ul');
-                    subUl.className = 'space-y-2 text-white/90 mb-4'; // Har list ke baad thoda gap
+                    subUl.className = 'space-y-2 text-white/90 mb-4'; 
+                    
+                    renderLinks(subcat.links, subUl, subcat);
 
-                    // Subcategory links loop
-                    subcat.links.forEach(link => {
-                        const li = document.createElement('li');
-                        const a = document.createElement('a');
-                        
-                        a.href = link.url;
-                        a.target = '_blank';
-                        // Har subcategory ka apna hover color hoga
-                        a.className = `${subcat.hoverColor} hover:underline flex items-center`; 
-                        
-                        const faviconUrl = `https://www.google.com/s2/favicons?domain=${link.url}`;
-
-                        a.innerHTML = `
-                            <img src="${faviconUrl}" class="w-4 h-4 mr-2 flex-shrink-0" alt="" loading="lazy" onerror="this.style.display='none'">
-                            <span>${link.name}</span>
-                            <span class="sr-only">(opens in new tab)</span> 
-                        `;
-
-                        li.appendChild(a);
-                        subUl.appendChild(li);
-                    });
-
-                    subcatWrapper.appendChild(subUl); // List ko wrapper mein daala
-                    subcatContainer.appendChild(subcatWrapper); // Wrapper ko main subcategory container mein daala
+                    subcatWrapper.appendChild(subUl);
+                    subcatContainer.appendChild(subcatWrapper);
                 });
 
                 card.appendChild(subcatContainer);
             }
-            // --- Subcategory Loop End ---
 
-            // 4. Title (h2) aur List (ul) ko card mein jodein
             card.appendChild(title);
             card.appendChild(ul);
-
-            // 5. Poore bane hue card ko main grid container mein jodein
             gridContainer.appendChild(card);
         });
 
     </script>
-
 </body>
 </html>
