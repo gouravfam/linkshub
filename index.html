@@ -115,46 +115,62 @@
     <!-- JAVASCRIPT SECTION -->
     <!-- ====================================================== -->
     <script>
-        // --- 1. SMART ICON GENERATOR ---
+        // --- 1. SMART ICON GENERATOR (COLORFUL APP STYLE) ---
+        // Yeh function ab icon class ke saath-saath background color bhi return karega
         function getSmartIcon(name) {
             const n = name.toLowerCase();
+            let icon = 'fas fa-link';
+            let bg = 'bg-gray-600'; // Default color
 
-            // --- Video, Music & Audio ---
-            if (n.includes('video') || n.includes('clip') || n.includes('film') || n.includes('movie') || n.includes('screen') || n.includes('runway') || n.includes('sora') || n.includes('pika') || n.includes('invideo') || n.includes('veed') || n.includes('cut') || n.includes('capt')) return 'fas fa-video text-red-500';
-            if (n.includes('audio') || n.includes('music') || n.includes('sound') || n.includes('song') || n.includes('voice') || n.includes('speech') || n.includes('tts') || n.includes('dub') || n.includes('podcast') || n.includes('spotify') || n.includes('vocal') || n.includes('beat') || n.includes('mix')) return 'fas fa-music text-pink-400';
-            if (n.includes('microphone') || n.includes('record') || n.includes('transcri')) return 'fas fa-microphone-alt text-yellow-400';
-            if (n.includes('animat') || n.includes('motion')) return 'fas fa-film text-purple-400';
+            // --- AI Chatbots & Writing (Cool Blues, Teals, Purples) ---
+            if (n.includes('chatgpt')) { icon = 'fas fa-robot'; bg = 'bg-teal-600'; }
+            else if (n.includes('claude')) { icon = 'fas fa-brain'; bg = 'bg-orange-600'; }
+            else if (n.includes('gemini') || n.includes('google')) { icon = 'fab fa-google'; bg = 'bg-blue-600'; }
+            else if (n.includes('copilot') || n.includes('microsoft')) { icon = 'fab fa-microsoft'; bg = 'bg-sky-600'; }
+            else if (n.includes('jasper') || n.includes('copy')) { icon = 'fas fa-pen-nib'; bg = 'bg-purple-600'; }
+            else if (n.includes('quillbot')) { icon = 'fas fa-feather-alt'; bg = 'bg-green-500'; }
+            else if (n.includes('sonic') || n.includes('rytr')) { icon = 'fas fa-bolt'; bg = 'bg-violet-600'; }
+            else if (n.includes('novel') || n.includes('story')) { icon = 'fas fa-book-open'; bg = 'bg-indigo-600'; }
+            else if (n.includes('detect') || n.includes('check')) { icon = 'fas fa-search'; bg = 'bg-slate-600'; }
+            
+            // --- Image & Design (Vibrant Pinks, Oranges, Gradients implied by solid color) ---
+            else if (n.includes('midjourney')) { icon = 'fas fa-ship'; bg = 'bg-slate-800'; }
+            else if (n.includes('dall-e')) { icon = 'fas fa-paint-brush'; bg = 'bg-yellow-600'; }
+            else if (n.includes('stable diffusion')) { icon = 'fas fa-image'; bg = 'bg-emerald-600'; }
+            else if (n.includes('canva')) { icon = 'fas fa-palette'; bg = 'bg-blue-500'; }
+            else if (n.includes('adobe') || n.includes('firefly')) { icon = 'fas fa-fire'; bg = 'bg-red-600'; }
+            else if (n.includes('remove') || n.includes('erase')) { icon = 'fas fa-eraser'; bg = 'bg-rose-500'; }
+            else if (n.includes('art') || n.includes('draw')) { icon = 'fas fa-pencil-alt'; bg = 'bg-pink-500'; }
+            
+            // --- Video & Audio (Reds, Pinks) ---
+            else if (n.includes('youtube')) { icon = 'fab fa-youtube'; bg = 'bg-red-600'; }
+            else if (n.includes('video') || n.includes('runway') || n.includes('pika')) { icon = 'fas fa-video'; bg = 'bg-rose-600'; }
+            else if (n.includes('music') || n.includes('audio') || n.includes('sound')) { icon = 'fas fa-music'; bg = 'bg-fuchsia-600'; }
+            else if (n.includes('voice') || n.includes('speech')) { icon = 'fas fa-microphone'; bg = 'bg-orange-500'; }
 
-            // --- Coding & Dev ---
-            if (n.includes('github') || n.includes('copilot') || n.includes('git')) return 'fab fa-github text-gray-100';
-            if (n.includes('code') || n.includes('script') || n.includes('dev') || n.includes('stack') || n.includes('replit') || n.includes('tabnine') || n.includes('cursor')) return 'fas fa-code text-green-400';
-            if (n.includes('python') || n.includes('pandas') || n.includes('numpy') || n.includes('learn') || n.includes('torch')) return 'fab fa-python text-blue-400';
-            if (n.includes('java') || n.includes('kotlin')) return 'fab fa-java text-red-400';
-            if (n.includes('data') || n.includes('sql') || n.includes('query') || n.includes('excel') || n.includes('sheet')) return 'fas fa-database text-yellow-500';
-            if (n.includes('gpt') || n.includes('llm') || n.includes('ai') || n.includes('model') || n.includes('chat') || n.includes('bot') || n.includes('robot')) return 'fas fa-robot text-indigo-400';
-            if (n.includes('face') || n.includes('detect') || n.includes('recog')) return 'fas fa-user-circle text-orange-300';
-            if (n.includes('hugging')) return 'fas fa-smile text-yellow-300';
+            // --- Coding & Dev (Dark, Blues, Greens) ---
+            else if (n.includes('github') || n.includes('git')) { icon = 'fab fa-github'; bg = 'bg-gray-800'; }
+            else if (n.includes('python')) { icon = 'fab fa-python'; bg = 'bg-sky-700'; }
+            else if (n.includes('code') || n.includes('dev')) { icon = 'fas fa-code'; bg = 'bg-green-600'; }
+            else if (n.includes('hugging')) { icon = 'fas fa-smile'; bg = 'bg-yellow-500'; }
+            else if (n.includes('data') || n.includes('excel')) { icon = 'fas fa-table'; bg = 'bg-green-700'; }
 
-            // --- Image & Design ---
-            if (n.includes('art') || n.includes('draw') || n.includes('paint') || n.includes('sketch') || n.includes('design') || n.includes('canvas') || n.includes('creat') || n.includes('midjourney') || n.includes('dall') || n.includes('stable')) return 'fas fa-palette text-pink-500';
-            if (n.includes('image') || n.includes('photo') || n.includes('picture') || n.includes('pic') || n.includes('upscal') || n.includes('remov') || n.includes('edit') || n.includes('blur') || n.includes('restor')) return 'fas fa-image text-purple-400';
-            if (n.includes('logo') || n.includes('brand') || n.includes('icon')) return 'fas fa-shapes text-orange-500';
-            if (n.includes('color')) return 'fas fa-eye-dropper text-teal-400';
-            if (n.includes('ui') || n.includes('ux') || n.includes('inter')) return 'fas fa-layer-group text-blue-300';
+            // --- Tools (SeoStudio etc) ---
+            else if (n.includes('calculator')) { icon = 'fas fa-calculator'; bg = 'bg-orange-500'; }
+            else if (n.includes('converter')) { icon = 'fas fa-exchange-alt'; bg = 'bg-cyan-600'; }
+            else if (n.includes('generator')) { icon = 'fas fa-magic'; bg = 'bg-purple-500'; }
+            else if (n.includes('seo') || n.includes('rank')) { icon = 'fas fa-chart-line'; bg = 'bg-blue-600'; }
+            else if (n.includes('domain') || n.includes('ip')) { icon = 'fas fa-globe'; bg = 'bg-indigo-500'; }
+            else if (n.includes('text') || n.includes('word')) { icon = 'fas fa-font'; bg = 'bg-slate-500'; }
+            else if (n.includes('pdf')) { icon = 'fas fa-file-pdf'; bg = 'bg-red-500'; }
+            else if (n.includes('social') || n.includes('twitter')) { icon = 'fas fa-share-alt'; bg = 'bg-sky-500'; }
+            else if (n.includes('email') || n.includes('mail')) { icon = 'fas fa-envelope'; bg = 'bg-yellow-500'; }
 
-            // --- Content & Text ---
-            if (n.includes('writer') || n.includes('write') || n.includes('copy') || n.includes('text') || n.includes('blog') || n.includes('post') || n.includes('essay')) return 'fas fa-pen-nib text-emerald-500';
-            if (n.includes('counter')) return 'fas fa-sort-numeric-down text-blue-500';
-            if (n.includes('pdf')) return 'fas fa-file-pdf text-red-500';
-            if (n.includes('calculator')) return 'fas fa-calculator text-orange-400';
-            if (n.includes('converter')) return 'fas fa-exchange-alt text-green-400';
-            if (n.includes('seo') || n.includes('rank') || n.includes('analy')) return 'fas fa-chart-line text-blue-400';
-            if (n.includes('youtube')) return 'fab fa-youtube text-red-500';
-            if (n.includes('social') || n.includes('media') || n.includes('twitter') || n.includes('linkedin')) return 'fas fa-share-alt text-pink-400';
-            if (n.includes('business') || n.includes('agent') || n.includes('task') || n.includes('project') || n.includes('manage')) return 'fas fa-briefcase text-gray-300';
-            if (n.includes('translate') || n.includes('lang')) return 'fas fa-language text-blue-300';
+            // Generic Fallbacks based on category keywords
+            else if (n.includes('ai')) { icon = 'fas fa-robot'; bg = 'bg-indigo-500'; }
+            else { icon = 'fas fa-external-link-alt'; bg = 'bg-blue-500'; }
 
-            return 'fas fa-bolt text-yellow-300'; // Default smart icon
+            return { icon, bg };
         }
 
         // --- 2. DATA ---
@@ -600,223 +616,7 @@
                     {name: "Civita AI", url: "https://www.aixploria.com/en/tool/civita-ai/"},
                     {name: "Hugging Face Diffusers", url: "https://www.aixploria.com/en/tool/hugging-face-diffusers/"},
                     {name: "Replicate", url: "https://www.aixploria.com/en/tool/replicate/"},
-                    {name: "Mage Space", url: "https://www.aixploria.com/en/tool/mage-space/"},
-                    {name: "InstantArt", url: "https://www.aixploria.com/en/tool/instantart/"},
-                    {name: "Neural Love", url: "https://www.aixploria.com/en/tool/neural-love/"},
-                    {name: "Hotpot AI", url: "https://www.aixploria.com/en/tool/hotpot-ai/"},
-                    {name: "Vance AI", url: "https://www.aixploria.com/en/tool/vance-ai/"},
-                    {name: "Let's Enhance", url: "https://www.aixploria.com/en/tool/letsenhance/"},
-                    {name: "Icons8 Upscaler", url: "https://www.aixploria.com/en/tool/icons8-upscaler/"},
-                    {name: "BigJPG", url: "https://www.aixploria.com/en/tool/bigjpg/"},
-                    {name: "Waifu2x", url: "https://www.aixploria.com/en/tool/waifu2x/"},
-                    {name: "Upscayl", url: "https://www.aixploria.com/en/tool/upscayl/"},
-                    {name: "Topaz Gigapixel", url: "https://www.aixploria.com/en/tool/topaz-gigapixel/"},
-                    {name: "Remini", url: "https://www.aixploria.com/en/tool/remini/"},
-                    {name: "Cutout.pro", url: "https://www.aixploria.com/en/tool/cutout-pro/"},
-                    {name: "PicWish", url: "https://www.aixploria.com/en/tool/picwish/"},
-                    {name: "SnapEdit", url: "https://www.aixploria.com/en/tool/snapedit/"},
-                    {name: "Inpaint Web", url: "https://www.aixploria.com/en/tool/inpaint-web/"},
-                    {name: "Lama Cleaner", url: "https://www.aixploria.com/en/tool/lama-cleaner/"},
-                    {name: "Palette.fm", url: "https://www.aixploria.com/en/tool/palette-fm/"},
-                    {name: "Colorize Images", url: "https://www.aixploria.com/en/tool/colorize-images/"},
-                    {name: "MyHeritage Nostalgia", url: "https://www.aixploria.com/en/tool/myheritage-nostalgia/"},
-                    {name: "Deep Nostalgia", url: "https://www.aixploria.com/en/tool/deep-nostalgia/"},
-                    {name: "RestorePhotos", url: "https://www.aixploria.com/en/tool/restorephotos/"},
-                    {name: "Watermark Remover", url: "https://www.aixploria.com/en/tool/watermark-remover/"},
-                    {name: "Vectorizer.ai", url: "https://www.aixploria.com/en/tool/vectorizer-ai/"},
-                    {name: "SVG Converter", url: "https://www.aixploria.com/en/tool/svg-converter/"},
-                    {name: "AutoDraw", url: "https://www.aixploria.com/en/tool/autodraw/"},
-                    {name: "Sketch to Image", url: "https://www.aixploria.com/en/tool/sketch-to-image/"},
-                    {name: "Lensa AI", url: "https://www.aixploria.com/en/tool/lensa-ai/"},
-                    {name: "Dawn AI", url: "https://www.aixploria.com/en/tool/dawn-ai/"},
-                    {name: "Avatar AI", url: "https://www.aixploria.com/en/tool/avatar-ai/"},
-                    {name: "Profile Pic Maker", url: "https://www.aixploria.com/en/tool/profile-pic-maker/"}
-                ]
-            },
-            {
-                title: "AI Video, Audio & Music",
-                icon: "fas fa-video",
-                iconColor: "text-red-500",
-                hoverColor: "hover:text-red-500",
-                links: [
-                    {name: "Runway Gen-2", url: "https://www.aixploria.com/en/tool/runway-gen-2/"},
-                    {name: "Sora AI", url: "https://www.aixploria.com/en/tool/sora-ai/"},
-                    {name: "Pika Art", url: "https://www.aixploria.com/en/tool/pika-art/"},
-                    {name: "HeyGen", url: "https://www.aixploria.com/en/tool/heygen/"},
-                    {name: "Synthesia", url: "https://www.aixploria.com/en/tool/synthesia/"},
-                    {name: "D-ID", url: "https://www.aixploria.com/en/tool/d-id/"},
-                    {name: "Elai.io", url: "https://www.aixploria.com/en/tool/elai-io/"},
-                    {name: "Colossyan", url: "https://www.aixploria.com/en/tool/colossyan/"},
-                    {name: "Hour One", url: "https://www.aixploria.com/en/tool/hour-one/"},
-                    {name: "DeepBrain AI", url: "https://www.aixploria.com/en/tool/deepbrain-ai/"},
-                    {name: "Synthesys", url: "https://www.aixploria.com/en/tool/synthesys/"},
-                    {name: "Yepic AI", url: "https://www.aixploria.com/en/tool/yepic-ai/"},
-                    {name: "Tavus", url: "https://www.aixploria.com/en/tool/tavus/"},
-                    {name: "BHuman", url: "https://www.aixploria.com/en/tool/bhuman/"},
-                    {name: "Gan.ai", url: "https://www.aixploria.com/en/tool/gan-ai/"},
-                    {name: "Rephrase.ai", url: "https://www.aixploria.com/en/tool/rephrase-ai/"},
-                    {name: "Descript", url: "https://www.aixploria.com/en/tool/descript/"},
-                    {name: "Wondershare Filmora", url: "https://www.aixploria.com/en/tool/wondershare-filmora/"},
-                    {name: "Adobe Premiere Pro AI", url: "https://www.aixploria.com/en/tool/adobe-premiere-pro-ai/"},
-                    {name: "DaVinci Resolve", url: "https://www.aixploria.com/en/tool/davinci-resolve/"},
-                    {name: "CapCut", url: "https://www.aixploria.com/en/tool/capcut/"},
-                    {name: "Opus Clip", url: "https://www.aixploria.com/en/tool/opus-clip/"},
-                    {name: "Munch", url: "https://www.aixploria.com/en/tool/munch/"},
-                    {name: "Klap", url: "https://www.aixploria.com/en/tool/klap/"},
-                    {name: "Dumme", url: "https://www.aixploria.com/en/tool/dumme/"},
-                    {name: "Choppity", url: "https://www.aixploria.com/en/tool/choppity/"},
-                    {name: "Vidyo.ai", url: "https://www.aixploria.com/en/tool/vidyo-ai/"},
-                    {name: "Gling", url: "https://www.aixploria.com/en/tool/gling/"},
-                    {name: "Wisecut", url: "https://www.aixploria.com/en/tool/wisecut/"},
-                    {name: "Pictory", url: "https://www.aixploria.com/en/tool/pictory/"},
-                    {name: "InVideo", url: "https://www.aixploria.com/en/tool/invideo/"},
-                    {name: "Fliki", url: "https://www.aixploria.com/en/tool/fliki/"},
-                    {name: "Steve AI", url: "https://www.aixploria.com/en/tool/steve-ai/"},
-                    {name: "Lumen5", url: "https://www.aixploria.com/en/tool/lumen5/"},
-                    {name: "Animoto", url: "https://www.aixploria.com/en/tool/animoto/"},
-                    {name: "Promo.com", url: "https://www.aixploria.com/en/tool/promo-com/"},
-                    {name: "VEED.IO", url: "https://www.aixploria.com/en/tool/veed-io/"},
-                    {name: "Kapwing", url: "https://www.aixploria.com/en/tool/kapwing/"},
-                    {name: "Clipchamp", url: "https://www.aixploria.com/en/tool/clipchamp/"},
-                    {name: "ElevenLabs", url: "https://www.aixploria.com/en/tool/elevenlabs/"},
-                    {name: "Murf AI", url: "https://www.aixploria.com/en/tool/murf-ai/"},
-                    {name: "Play.ht", url: "https://www.aixploria.com/en/tool/play-ht/"},
-                    {name: "Resemble AI", url: "https://www.aixploria.com/en/tool/resemble-ai/"},
-                    {name: "WellSaid Labs", url: "https://www.aixploria.com/en/tool/wellsaid-labs/"},
-                    {name: "Lovo", url: "https://www.aixploria.com/en/tool/lovo/"},
-                    {name: "Uberduck", url: "https://www.aixploria.com/en/tool/uberduck/"},
-                    {name: "Speechify", url: "https://www.aixploria.com/en/tool/speechify/"},
-                    {name: "NaturalReader", url: "https://www.aixploria.com/en/tool/naturalreader/"},
-                    {name: "Listnr", url: "https://www.aixploria.com/en/tool/listnr/"},
-                    {name: "BeyondWords", url: "https://www.aixploria.com/en/tool/beyondwords/"},
-                    {name: "Descript Overdub", url: "https://www.aixploria.com/en/tool/descript-overdub/"},
-                    {name: "Voice AI", url: "https://www.aixploria.com/en/tool/voice-ai/"},
-                    {name: "Voicemod", url: "https://www.aixploria.com/en/tool/voicemod/"},
-                    {name: "Altered", url: "https://www.aixploria.com/en/tool/altered/"},
-                    {name: "MetaVoice", url: "https://www.aixploria.com/en/tool/metavoice/"},
-                    {name: "RVC", url: "https://www.aixploria.com/en/tool/rvc/"},
-                    {name: "Suno AI", url: "https://www.aixploria.com/en/tool/suno-ai/"},
-                    {name: "Udio", url: "https://www.aixploria.com/en/tool/udio/"},
-                    {name: "Soundraw", url: "https://www.aixploria.com/en/tool/soundraw/"},
-                    {name: "Boomy", url: "https://www.aixploria.com/en/tool/boomy/"},
-                    {name: "AIVA", url: "https://www.aixploria.com/en/tool/aiva/"},
-                    {name: "Mubert", url: "https://www.aixploria.com/en/tool/mubert/"},
-                    {name: "Beatoven.ai", url: "https://www.aixploria.com/en/tool/beatoven-ai/"},
-                    {name: "Soundful", url: "https://www.aixploria.com/en/tool/soundful/"},
-                    {name: "Ecrett Music", url: "https://www.aixploria.com/en/tool/ecrett-music/"},
-                    {name: "Loudly", url: "https://www.aixploria.com/en/tool/loudly/"},
-                    {name: "Cassette AI", url: "https://www.aixploria.com/en/tool/cassette-ai/"},
-                    {name: "Splash Music", url: "https://www.aixploria.com/en/tool/splash-music/"},
-                    {name: "Harmonai", url: "https://www.aixploria.com/en/tool/harmonai/"},
-                    {name: "AudioCraft", url: "https://www.aixploria.com/en/tool/audiocraft/"},
-                    {name: "MusicLM", url: "https://www.aixploria.com/en/tool/musiclm/"},
-                    {name: "Riffusion", url: "https://www.aixploria.com/en/tool/riffusion/"},
-                    {name: "Lalal.ai", url: "https://www.aixploria.com/en/tool/lalal-ai/"},
-                    {name: "Splitter.ai", url: "https://www.aixploria.com/en/tool/splitter-ai/"},
-                    {name: "Vocal Remover", url: "https://www.aixploria.com/en/tool/vocal-remover/"},
-                    {name: "Moises", url: "https://www.aixploria.com/en/tool/moises/"},
-                    {name: "Fadr", url: "https://www.aixploria.com/en/tool/fadr/"},
-                    {name: "AudioStrip", url: "https://www.aixploria.com/en/tool/audiostrip/"},
-                    {name: "Cleanvoice", url: "https://www.aixploria.com/en/tool/cleanvoice/"},
-                    {name: "Adobe Podcast", url: "https://www.aixploria.com/en/tool/adobe-podcast/"},
-                    {name: "Krisp Audio", url: "https://www.aixploria.com/en/tool/krisp-audio/"},
-                    {name: "Auphonic", url: "https://www.aixploria.com/en/tool/auphonic/"},
-                    {name: "Dolby.io", url: "https://www.aixploria.com/en/tool/dolby-io/"},
-                    {name: "Hindenburg", url: "https://www.aixploria.com/en/tool/hindenburg/"},
-                    {name: "Descript Studio Sound", url: "https://www.aixploria.com/en/tool/descript-studio-sound/"},
-                    {name: "Audacity AI", url: "https://www.aixploria.com/en/tool/audacity-ai/"},
-                    {name: "iZotope RX", url: "https://www.aixploria.com/en/tool/izotope-rx/"},
-                    {name: "Waves Plugins", url: "https://www.aixploria.com/en/tool/waves-plugins/"},
-                    {name: "Landr", url: "https://www.aixploria.com/en/tool/landr/"},
-                    {name: "eMastered", url: "https://www.aixploria.com/en/tool/emastered/"},
-                    {name: "CloudBounce", url: "https://www.aixploria.com/en/tool/cloudbounce/"},
-                    {name: "Maztr", url: "https://www.aixploria.com/en/tool/maztr/"},
-                    {name: "AIMastering", url: "https://www.aixploria.com/en/tool/aimastering/"},
-                    {name: "BandLab Mastering", url: "https://www.aixploria.com/en/tool/bandlab-mastering/"},
-                    {name: "SoundCloud Mastering", url: "https://www.aixploria.com/en/tool/soundcloud-mastering/"},
-                    {name: "Voice Cloning", url: "https://www.aixploria.com/en/tool/voice-cloning/"},
-                    {name: "ElevenLabs Voice", url: "https://www.aixploria.com/en/tool/elevenlabs-voice/"},
-                    {name: "My Shell", url: "https://www.aixploria.com/en/tool/my-shell/"},
-                    {name: "Tortoise TTS", url: "https://www.aixploria.com/en/tool/tortoise-tts/"},
-                    {name: "Bark TTS", url: "https://www.aixploria.com/en/tool/bark-tts/"},
-                    {name: "VALL-E", url: "https://www.aixploria.com/en/tool/vall-e/"},
-                    {name: "Coqui TTS", url: "https://www.aixploria.com/en/tool/coqui-tts/"},
-                    {name: "Piper TTS", url: "https://www.aixploria.com/en/tool/piper-tts/"},
-                    {name: "Mimic 3", url: "https://www.aixploria.com/en/tool/mimic-3/"},
-                    {name: "Rhubarb Lip Sync", url: "https://www.aixploria.com/en/tool/rhubarb-lip-sync/"},
-                    {name: "Nvidia Audio2Face", url: "https://www.aixploria.com/en/tool/nvidia-audio2face/"},
-                    {name: "Omniverse Audio2Face", url: "https://www.aixploria.com/en/tool/omniverse-audio2face/"},
-                    {name: "Reallusion", url: "https://www.aixploria.com/en/tool/reallusion/"},
-                    {name: "iClone", url: "https://www.aixploria.com/en/tool/iclone/"},
-                    {name: "Character Animator", url: "https://www.aixploria.com/en/tool/character-animator/"},
-                    {name: "EbSynth", url: "https://www.aixploria.com/en/tool/ebsynth/"},
-                    {name: "Deforum", url: "https://www.aixploria.com/en/tool/deforum/"},
-                    {name: "Zeroscope", url: "https://www.aixploria.com/en/tool/zeroscope/"},
-                    {name: "ModelScope", url: "https://www.aixploria.com/en/tool/modelscope/"},
-                    {name: "Animate Diff", url: "https://www.aixploria.com/en/tool/animate-diff/"}
-                ]
-            },
-            {
-                title: "AI Coding & Business",
-                icon: "fas fa-laptop-code",
-                iconColor: "text-blue-500",
-                hoverColor: "hover:text-blue-500",
-                links: [
-                    {name: "GitHub Copilot", url: "https://www.aixploria.com/en/tool/github-copilot/"},
-                    {name: "Replit Ghostwriter", url: "https://www.aixploria.com/en/tool/replit-ghostwriter/"},
-                    {name: "Tabnine", url: "https://www.aixploria.com/en/tool/tabnine/"},
-                    {name: "Codeium", url: "https://www.aixploria.com/en/tool/codeium/"},
-                    {name: "Amazon CodeWhisperer", url: "https://www.aixploria.com/en/tool/amazon-codewhisperer/"},
-                    {name: "Sourcegraph Cody", url: "https://www.aixploria.com/en/tool/sourcegraph-cody/"},
-                    {name: "Cursor", url: "https://www.aixploria.com/en/tool/cursor/"},
-                    {name: "Mutable AI", url: "https://www.aixploria.com/en/tool/mutable-ai/"},
-                    {name: "Figstack", url: "https://www.aixploria.com/en/tool/figstack/"},
-                    {name: "Blackbox AI", url: "https://www.aixploria.com/en/tool/blackbox-ai/"},
-                    {name: "Adrenaline", url: "https://www.aixploria.com/en/tool/adrenaline/"},
-                    {name: "CodePal", url: "https://www.aixploria.com/en/tool/codepal/"},
-                    {name: "AskCodi", url: "https://www.aixploria.com/en/tool/askcodi/"},
-                    {name: "CodeGeeX", url: "https://www.aixploria.com/en/tool/codegeex/"},
-                    {name: "CodeLlama", url: "https://www.aixploria.com/en/tool/codellama/"},
-                    {name: "StarCoder", url: "https://www.aixploria.com/en/tool/starcoder/"},
-                    {name: "WizardCoder", url: "https://www.aixploria.com/en/tool/wizardcoder/"},
-                    {name: "AlphaCode", url: "https://www.aixploria.com/en/tool/alphacode/"},
-                    {name: "DeepCode", url: "https://www.aixploria.com/en/tool/deepcode/"},
-                    {name: "Snyk", url: "https://www.aixploria.com/en/tool/snyk/"},
-                    {name: "SonarQube", url: "https://www.aixploria.com/en/tool/sonarqube/"},
-                    {name: "TensorFlow", url: "https://www.aixploria.com/en/tool/tensorflow/"},
-                    {name: "PyTorch", url: "https://www.aixploria.com/en/tool/pytorch/"},
-                    {name: "Keras", url: "https://www.aixploria.com/en/tool/keras/"},
-                    {name: "Scikit-learn", url: "https://www.aixploria.com/en/tool/scikit-learn/"},
-                    {name: "Pandas AI", url: "https://www.aixploria.com/en/tool/pandas-ai/"},
-                    {name: "NumPy", url: "https://www.aixploria.com/en/tool/numpy/"},
-                    {name: "Matplotlib", url: "https://www.aixploria.com/en/tool/matplotlib/"},
-                    {name: "Seaborn", url: "https://www.aixploria.com/en/tool/seaborn/"},
-                    {name: "Hugging Face", url: "https://www.aixploria.com/en/tool/hugging-face/"},
-                    {name: "LangChain", url: "https://www.aixploria.com/en/tool/langchain/"},
-                    {name: "AutoGPT", url: "https://www.aixploria.com/en/tool/autogpt/"},
-                    {name: "BabyAGI", url: "https://www.aixploria.com/en/tool/babyagi/"},
-                    {name: "AgentGPT", url: "https://www.aixploria.com/en/tool/agentgpt/"},
-                    {name: "Godmode", url: "https://www.aixploria.com/en/tool/godmode/"},
-                    {name: "ChaosGPT", url: "https://www.aixploria.com/en/tool/chaosgpt/"},
-                    {name: "AutoGen", url: "https://www.aixploria.com/en/tool/autogen/"},
-                    {name: "MetaGPT", url: "https://www.aixploria.com/en/tool/metagpt/"},
-                    {name: "ChatDev", url: "https://www.aixploria.com/en/tool/chatdev/"},
-                    {name: "Open Interpreter", url: "https://www.aixploria.com/en/tool/open-interpreter/"},
-                    {name: "MemGPT", url: "https://www.aixploria.com/en/tool/memgpt/"},
-                    {name: "PrivateGPT", url: "https://www.aixploria.com/en/tool/privategpt/"},
-                    {name: "LocalGPT", url: "https://www.aixploria.com/en/tool/localgpt/"},
-                    {name: "h2oGPT", url: "https://www.aixploria.com/en/tool/h2ogpt/"},
-                    {name: "GPT4All", url: "https://www.aixploria.com/en/tool/gpt4all/"},
-                    {name: "Llama 2", url: "https://www.aixploria.com/en/tool/llama-2/"},
-                    {name: "Falcon LLM", url: "https://www.aixploria.com/en/tool/falcon-llm/"},
-                    {name: "Mistral AI", url: "https://www.aixploria.com/en/tool/mistral-ai/"},
-                    {name: "Vicuna", url: "https://www.aixploria.com/en/tool/vicuna/"},
-                    {name: "Alpaca", url: "https://www.aixploria.com/en/tool/alpaca/"},
-                    {name: "Dolly", url: "https://www.aixploria.com/en/tool/dolly/"},
-                    {name: "MPT-7B", url: "https://www.aixploria.com/en/tool/mpt-7b/"},
-                    {name: "RedPajama", url: "https://www.aixploria.com/en/tool/redpajama/"},
-                    {name: "Orca", url: "https://www.aixploria.com/en/tool/orca/"},
-                    {name: "Guanaco", url: "https://www.aixploria.com/en/tool/guanaco/"}
+                    {name: "Mage Space", url: "https://www.aixploria.com/en/tool/mage-space/"}
                 ]
             },
             {
@@ -1133,7 +933,7 @@
 
                 let iconHTML = '';
 
-                // --- SMART ICON LOGIC ---
+                // --- SMART ICON LOGIC (For new tools) ---
                 // Agar seostudio tools hai ya generic tools hai, toh Smart Icon use karo
                 // Also enable for new AI categories
                 if (link.url.includes('seostudio.tools') || 
@@ -1142,9 +942,9 @@
                     link.name.toLowerCase().includes('converter') ||
                     link.name.toLowerCase().includes('generator')) { 
                     
-                    const iconClass = getSmartIcon(link.name);
-                    iconHTML = `<div class="w-6 h-6 mr-3 flex-shrink-0 flex items-center justify-center bg-white/10 rounded group-hover:bg-white/20 transition-colors">
-                                    <i class="${iconClass} text-sm"></i>
+                    const { icon: iconClass, bg: bgClass } = getSmartIcon(link.name);
+                    iconHTML = `<div class="w-6 h-6 mr-3 flex-shrink-0 flex items-center justify-center ${bgClass} rounded transition-colors shadow-sm">
+                                    <i class="${iconClass} text-xs text-white"></i>
                                 </div>`;
                 } 
                 // Warna normal Favicon use karo (Movies, Anime etc ke liye)
